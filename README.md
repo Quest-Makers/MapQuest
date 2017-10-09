@@ -8,9 +8,17 @@ Time spent: **X** hours spent in total
 ## User Stories
 
 The following **required** functionality is completed:
+- [ ] User can create a new "treasure hunt"
+- [ ] Treasure hunt consists of series of screens, each requires a code to be entered to reveal the next screen
+- [ ] Each screen includes customizeable text that serves as a clue
+- [ ] User can "play" a treasure hunt; entering correct code at each screen reveals next screen
 
 
 The following **optional** features are implemented:
+- [ ] When creating a new screen, creator can add text, images, and choose a geo location from a map
+- [ ] Can use curent gps location to set location for a screen
+- [ ] Can get list of hunts created by other users and play them
+- [ ] AR integration: some clues require you to point your phone camera at a physical location, which then reveals further clues
 
 
 The following **additional** features are implemented:

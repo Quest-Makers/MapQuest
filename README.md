@@ -3,7 +3,7 @@
 **MapQuest** helps you create and facilitate treasure hunts all over town.
 You'll be able to send your friends all over town on a wild chase, without ever leaving your own house.
 
-Time spent: **16** hours spent in total
+Time spent: **X** hours spent in total
 
 ## User Stories
 
@@ -21,7 +21,6 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![](https://i.imgur.com/3zE47Xi.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

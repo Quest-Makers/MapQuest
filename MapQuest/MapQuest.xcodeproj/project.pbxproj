@@ -12,9 +12,13 @@
 		CEF412D91F8EF0FD00C482DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412D71F8EF0FD00C482DE /* Main.storyboard */; };
 		CEF412DB1F8EF0FD00C482DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF412DA1F8EF0FD00C482DE /* Assets.xcassets */; };
 		CEF412DE1F8EF0FD00C482DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412DC1F8EF0FD00C482DE /* LaunchScreen.storyboard */; };
+		E100F71BBC22E4A2792EABED /* Pods_MapQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapQuest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A8A63EE59050F45042E8AF /* Pods-MapQuest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapQuest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest.debug.xcconfig"; sourceTree = "<group>"; };
+		76AD5C604864162296DF2EBD /* Pods-MapQuest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapQuest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest.release.xcconfig"; sourceTree = "<group>"; };
 		CEF412D01F8EF0FD00C482DE /* MapQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF412D31F8EF0FD00C482DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF412D51F8EF0FD00C482DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E100F71BBC22E4A2792EABED /* Pods_MapQuest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52E093277FCA074CE5EBB462 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CEF412C71F8EF0FD00C482DE = {
 			isa = PBXGroup;
 			children = (
 				CEF412D21F8EF0FD00C482DE /* MapQuest */,
 				CEF412D11F8EF0FD00C482DE /* Products */,
+				E84B6478CC553F9C51F73114 /* Pods */,
+				52E093277FCA074CE5EBB462 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = MapQuest;
 			sourceTree = "<group>";
 		};
+		E84B6478CC553F9C51F73114 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70A8A63EE59050F45042E8AF /* Pods-MapQuest.debug.xcconfig */,
+				76AD5C604864162296DF2EBD /* Pods-MapQuest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF412E21F8EF0FD00C482DE /* Build configuration list for PBXNativeTarget "MapQuest" */;
 			buildPhases = (
+				730A3C01E863912255348F02 /* [CP] Check Pods Manifest.lock */,
 				CEF412CC1F8EF0FD00C482DE /* Sources */,
 				CEF412CD1F8EF0FD00C482DE /* Frameworks */,
 				CEF412CE1F8EF0FD00C482DE /* Resources */,
+				3DD6CB22542DEF788FC0EEC4 /* [CP] Embed Pods Frameworks */,
+				C6355C73F8F2F60FCD364439 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DD6CB22542DEF788FC0EEC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		730A3C01E863912255348F02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MapQuest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6355C73F8F2F60FCD364439 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEF412CC1F8EF0FD00C482DE /* Sources */ = {
@@ -272,6 +355,7 @@
 		};
 		CEF412E31F8EF0FD00C482DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70A8A63EE59050F45042E8AF /* Pods-MapQuest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +371,7 @@
 		};
 		CEF412E41F8EF0FD00C482DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76AD5C604864162296DF2EBD /* Pods-MapQuest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -15,6 +15,7 @@
 		D074D82E1F906ED300B660C4 /* TreasureHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D82D1F906ED300B660C4 /* TreasureHunt.swift */; };
 		D074D8321F906EFE00B660C4 /* ClueContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D8311F906EFE00B660C4 /* ClueContent.swift */; };
 		D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D8331F906F3D00B660C4 /* ScreenStage.swift */; };
+		D074D8361F90757E00B660C4 /* NewClueStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D8351F90757E00B660C4 /* NewClueStageViewController.swift */; };
 		E100F71BBC22E4A2792EABED /* Pods_MapQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		D074D82D1F906ED300B660C4 /* TreasureHunt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureHunt.swift; sourceTree = "<group>"; };
 		D074D8311F906EFE00B660C4 /* ClueContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueContent.swift; sourceTree = "<group>"; };
 		D074D8331F906F3D00B660C4 /* ScreenStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStage.swift; sourceTree = "<group>"; };
+		D074D8351F90757E00B660C4 /* NewClueStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClueStageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				D074D82C1F906E8800B660C4 /* Models */,
 				CEF412D31F8EF0FD00C482DE /* AppDelegate.swift */,
 				CEF412D51F8EF0FD00C482DE /* CreateHuntViewController.swift */,
+				D074D8351F90757E00B660C4 /* NewClueStageViewController.swift */,
 				CEF412D71F8EF0FD00C482DE /* Main.storyboard */,
 				CEF412DA1F8EF0FD00C482DE /* Assets.xcassets */,
 				CEF412DC1F8EF0FD00C482DE /* LaunchScreen.storyboard */,
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D074D8361F90757E00B660C4 /* NewClueStageViewController.swift in Sources */,
 				CEF412D61F8EF0FD00C482DE /* CreateHuntViewController.swift in Sources */,
 				D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */,
 				D074D8321F906EFE00B660C4 /* ClueContent.swift in Sources */,

@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var huntName: String = ""
     var huntDescription: String = ""
     var screenStages: [ScreenStage] = []
+    var treasureHunt: TreasureHunt()
 
 
     override func viewDidLoad() {
@@ -38,6 +39,10 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination.treasureHunt = self.treasureHunt
     }
 
 

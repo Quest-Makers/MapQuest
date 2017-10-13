@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Burger View Controller-->
+        <scene sceneID="Qib-fO-hAw">
+            <objects>
+                <viewController id="d0m-aU-0DB" customClass="BurgerViewController" customModule="MapQuest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nu2-b0-Cts">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="kqK-8F-m3z"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X0h-26-a8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103" y="108"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="fMe-Mf-PUz">
+            <objects>
+                <viewController id="EmD-8u-5IK" customClass="MenuViewController" customModule="MapQuest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mUe-qX-eoe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k01-j1-iGz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="68" id="tEz-yq-H1T" customClass="MenuItemTableViewCell" customModule="MapQuest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tEz-yq-H1T" id="aDw-w5-kBC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3T-ZT-Dhg">
+                                                    <rect key="frame" x="35" y="10" width="114" height="47.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="V3T-ZT-Dhg" firstAttribute="leading" secondItem="aDw-w5-kBC" secondAttribute="leading" constant="35" id="Sav-Vs-i1R"/>
+                                                <constraint firstItem="V3T-ZT-Dhg" firstAttribute="top" secondItem="aDw-w5-kBC" secondAttribute="top" constant="10" id="b1v-eB-l5v"/>
+                                                <constraint firstAttribute="bottom" secondItem="V3T-ZT-Dhg" secondAttribute="bottom" constant="10" id="kxS-eq-lP3"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="V3T-ZT-Dhg" secondAttribute="trailing" constant="25" id="lbD-eS-CEd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="menuItemLabel" destination="V3T-ZT-Dhg" id="rrt-F6-JLj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k01-j1-iGz" firstAttribute="top" secondItem="mUe-qX-eoe" secondAttribute="top" id="OeY-2T-pFP"/>
+                            <constraint firstItem="k01-j1-iGz" firstAttribute="leading" secondItem="tDI-Yc-Sab" secondAttribute="leading" id="cfn-ZX-ATg"/>
+                            <constraint firstItem="tDI-Yc-Sab" firstAttribute="trailing" secondItem="k01-j1-iGz" secondAttribute="trailing" id="klC-8k-tx5"/>
+                            <constraint firstItem="tDI-Yc-Sab" firstAttribute="bottom" secondItem="k01-j1-iGz" secondAttribute="bottom" id="sbH-mj-Zwn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tDI-Yc-Sab"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuItemsTable" destination="k01-j1-iGz" id="qgd-7B-D0n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdr-HI-46H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784.79999999999995" y="106.59670164917542"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4591D76F1F90AEC700BD7DA5 /* Menus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4591D76E1F90AEC700BD7DA5 /* Menus.storyboard */; };
+		4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */; };
+		4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */; };
+		4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */; };
 		CEF412D41F8EF0FD00C482DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF412D31F8EF0FD00C482DE /* AppDelegate.swift */; };
 		CEF412D61F8EF0FD00C482DE /* CreateHuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF412D51F8EF0FD00C482DE /* CreateHuntViewController.swift */; };
 		CEF412D91F8EF0FD00C482DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412D71F8EF0FD00C482DE /* Main.storyboard */; };
@@ -21,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapQuest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4591D76E1F90AEC700BD7DA5 /* Menus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menus.storyboard; sourceTree = "<group>"; };
+		4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerViewController.swift; sourceTree = "<group>"; };
+		4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		70A8A63EE59050F45042E8AF /* Pods-MapQuest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapQuest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest.debug.xcconfig"; sourceTree = "<group>"; };
 		76AD5C604864162296DF2EBD /* Pods-MapQuest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapQuest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest.release.xcconfig"; sourceTree = "<group>"; };
 		CEF412D01F8EF0FD00C482DE /* MapQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +56,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4591D76A1F90AE2A00BD7DA5 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */,
+				4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */,
+				CEF412D51F8EF0FD00C482DE /* CreateHuntViewController.swift */,
+				D074D8351F90757E00B660C4 /* NewClueStageViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4591D76B1F90AE3500BD7DA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		52E093277FCA074CE5EBB462 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,13 +104,14 @@
 		CEF412D21F8EF0FD00C482DE /* MapQuest */ = {
 			isa = PBXGroup;
 			children = (
+				4591D76B1F90AE3500BD7DA5 /* Views */,
+				4591D76A1F90AE2A00BD7DA5 /* View Controllers */,
 				D074D82C1F906E8800B660C4 /* Models */,
 				CEF412D31F8EF0FD00C482DE /* AppDelegate.swift */,
-				CEF412D51F8EF0FD00C482DE /* CreateHuntViewController.swift */,
-				D074D8351F90757E00B660C4 /* NewClueStageViewController.swift */,
-				CEF412D71F8EF0FD00C482DE /* Main.storyboard */,
-				CEF412DA1F8EF0FD00C482DE /* Assets.xcassets */,
 				CEF412DC1F8EF0FD00C482DE /* LaunchScreen.storyboard */,
+				CEF412D71F8EF0FD00C482DE /* Main.storyboard */,
+				4591D76E1F90AEC700BD7DA5 /* Menus.storyboard */,
+				CEF412DA1F8EF0FD00C482DE /* Assets.xcassets */,
 				CEF412DF1F8EF0FD00C482DE /* Info.plist */,
 			);
 			path = MapQuest;
@@ -173,6 +201,7 @@
 				CEF412DE1F8EF0FD00C482DE /* LaunchScreen.storyboard in Resources */,
 				CEF412DB1F8EF0FD00C482DE /* Assets.xcassets in Resources */,
 				CEF412D91F8EF0FD00C482DE /* Main.storyboard in Resources */,
+				4591D76F1F90AEC700BD7DA5 /* Menus.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,12 +268,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */,
 				D074D8361F90757E00B660C4 /* NewClueStageViewController.swift in Sources */,
 				CEF412D61F8EF0FD00C482DE /* CreateHuntViewController.swift in Sources */,
+				4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */,
 				D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */,
 				D074D8321F906EFE00B660C4 /* ClueContent.swift in Sources */,
 				D074D82E1F906ED300B660C4 /* TreasureHunt.swift in Sources */,
 				CEF412D41F8EF0FD00C482DE /* AppDelegate.swift in Sources */,
+				4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

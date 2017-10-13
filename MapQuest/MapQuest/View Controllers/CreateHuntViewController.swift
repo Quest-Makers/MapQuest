@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var huntName: String = ""
     var huntDescription: String = ""
     var screenStages: [ScreenStage] = []
-    var treasureHunt: TreasureHunt()
+    var treasureHunt: TreasureHunt = TreasureHunt()
 
 
     override func viewDidLoad() {
@@ -42,7 +42,9 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        segue.destination.treasureHunt = self.treasureHunt
+        if let destination = segue.destination as? NewClueStageViewController {
+            destination.treasureHunt = self.treasureHunt
+        }
     }
 
 

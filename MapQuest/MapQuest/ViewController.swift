@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
+    
+    var shield = PFObject(className: "Armor")
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("view loaded")
+        
+        shield["displayName"] = "Wooden Shield"
+        shield["fireProof"] = false
+        shield["rupees"] = 50
+        shield.saveInBackground(block: { (success, error) in
+            if (success) {
+                print("Object was saved successfully")
+            } else {
+                print("Object was not saved successfully")
+            }
+        })
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -12,6 +12,9 @@ import Parse
 class ViewController: UIViewController {
     
     var shield = PFObject(className: "Armor")
+    var huntName: String = ""
+    var huntDescription: String = ""
+    var screenStages: [ScreenStage] = []
 
 
     override func viewDidLoad() {

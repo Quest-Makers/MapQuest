@@ -41,11 +41,27 @@ class MapQuestClient: NSObject {
     }
     
     func fetchAllQuests(completion: ([Quest]) -> Void) -> Void {
-        return completion([Quest]())
+        // temporary while we get Parse hooked up
+        var quests: [Quest] = [Quest]()
+        
+        quests.append(Quest(questDict: ["name": "All Quests 1", "state": "Completed"]))
+        quests.append(Quest(questDict: ["name": "All Quests 2", "state": "Completed"]))
+        quests.append(Quest(questDict: ["name": "All Quests 3", "state": "Completed"]))
+        quests.append(Quest(questDict: ["name": "All Quests 4", "state": "Completed"]))
+
+        return completion(quests)
     }
     
     func fetchMyQuests(completion: ([Quest]) -> Void) -> Void {
-        return completion([Quest]())
+        // temporary while we get Parse hooked up
+        var quests: [Quest] = [Quest]()
+        
+        quests.append(Quest(questDict: ["name": "My Quests 1", "state": "Completed"]))
+        quests.append(Quest(questDict: ["name": "My Quests 2", "state": "Completed"]))
+        quests.append(Quest(questDict: ["name": "My Quests 3", "state": "Completed"]))
+        quests.append(Quest(questDict: ["name": "My Quests 4", "state": "Completed"]))
+        
+        return completion(quests)
     }
     
     func fetchInProgressQuests(completion: ([Quest]) -> Void) -> Void {

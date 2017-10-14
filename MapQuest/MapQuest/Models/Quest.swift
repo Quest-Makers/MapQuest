@@ -37,4 +37,16 @@ class Quest: NSObject {
         
         return .ERROR
     }
+    
+    class func getStringFromState(state: State) -> String {
+        if state == .IN_PROGRESS {
+            return IN_PROGRESS_STRING
+        }
+        
+        if state == .COMPLETED {
+            return COMPELTED_STRING
+        }
+        
+        return ""
+    }
 }

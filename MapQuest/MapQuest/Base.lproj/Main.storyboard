@@ -110,15 +110,15 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestListCell" rowHeight="53" id="hQw-en-3Rr" customClass="QuestTableViewCell" customModule="MapQuest" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="53"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestListCell" rowHeight="95" id="hQw-en-3Rr" customClass="QuestTableViewCell" customModule="MapQuest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hQw-en-3Rr" id="ES7-zi-B9L">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quest Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-tU-Aha">
-                                                    <rect key="frame" x="10" y="15" width="95.5" height="22.5"/>
+                                                    <rect key="frame" x="10" y="25" width="95.5" height="44.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -127,12 +127,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rUG-tU-Aha" secondAttribute="trailing" constant="10" id="Nb3-Hj-In3"/>
                                                 <constraint firstItem="rUG-tU-Aha" firstAttribute="leading" secondItem="ES7-zi-B9L" secondAttribute="leading" constant="10" id="XAB-NV-7ah"/>
-                                                <constraint firstItem="rUG-tU-Aha" firstAttribute="top" secondItem="ES7-zi-B9L" secondAttribute="top" constant="15" id="fQV-9j-sCe"/>
-                                                <constraint firstAttribute="bottom" secondItem="rUG-tU-Aha" secondAttribute="bottom" constant="15" id="qvY-Re-fzl"/>
+                                                <constraint firstItem="rUG-tU-Aha" firstAttribute="top" secondItem="ES7-zi-B9L" secondAttribute="top" constant="25" id="fQV-9j-sCe"/>
+                                                <constraint firstAttribute="bottom" secondItem="rUG-tU-Aha" secondAttribute="bottom" constant="25" id="qvY-Re-fzl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="questNameLabel" destination="rUG-tU-Aha" id="rgz-9D-h1j"/>
+                                            <segue destination="HKf-GF-ARj" kind="show" id="A99-8R-7D1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -154,7 +155,63 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIL-Gs-HLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2790" y="438"/>
+            <point key="canvasLocation" x="2789.5999999999999" y="437.63118440779613"/>
+        </scene>
+        <!--Quest Details View Controller-->
+        <scene sceneID="JrZ-kR-dmA">
+            <objects>
+                <viewController id="HKf-GF-ARj" customClass="QuestDetailsViewController" customModule="MapQuest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eb2-sl-14c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quest Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdv-xA-oR7">
+                                <rect key="frame" x="107" y="114" width="161" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ao-Hc-lJM">
+                                <rect key="frame" x="136" y="165" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CW2-QP-p6i">
+                                <rect key="frame" x="125" y="286" width="124" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BY-xv-Pch">
+                                <rect key="frame" x="121" y="572" width="132" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Start Quest"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Ao-Hc-lJM" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="0Nh-lZ-Trg"/>
+                            <constraint firstItem="CW2-QP-p6i" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="3PH-jo-AbH"/>
+                            <constraint firstItem="8Ao-Hc-lJM" firstAttribute="top" secondItem="gdv-xA-oR7" secondAttribute="bottom" constant="15" id="JW1-8R-naz"/>
+                            <constraint firstItem="6BY-xv-Pch" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CW2-QP-p6i" secondAttribute="bottom" constant="25" id="a1U-Ms-gsZ"/>
+                            <constraint firstItem="H8e-oQ-7GU" firstAttribute="bottom" secondItem="6BY-xv-Pch" secondAttribute="bottom" constant="50" id="jsQ-dm-Fz4"/>
+                            <constraint firstItem="6BY-xv-Pch" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="nXI-Hz-82o"/>
+                            <constraint firstItem="CW2-QP-p6i" firstAttribute="top" secondItem="8Ao-Hc-lJM" secondAttribute="bottom" constant="100" id="o2J-ov-gkI"/>
+                            <constraint firstItem="gdv-xA-oR7" firstAttribute="top" secondItem="H8e-oQ-7GU" secondAttribute="top" constant="50" id="tQt-M2-Lss"/>
+                            <constraint firstItem="gdv-xA-oR7" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="x8E-3J-nd0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H8e-oQ-7GU"/>
+                    </view>
+                    <connections>
+                        <outlet property="questDescriptionLabel" destination="CW2-QP-p6i" id="3KL-Mg-Y6e"/>
+                        <outlet property="questNameLabel" destination="gdv-xA-oR7" id="eZk-NP-rzh"/>
+                        <outlet property="questStateLabel" destination="8Ao-Hc-lJM" id="LQ9-Ka-J9w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7MN-Vw-NEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3682.4000000000001" y="437.63118440779613"/>
         </scene>
         <!--Burger View Controller-->
         <scene sceneID="2os-3f-WIz">

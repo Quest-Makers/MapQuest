@@ -21,6 +21,8 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var menuItemsTable: UITableView!
     
+    var burgerViewController: BurgerViewController!
+    
     let menuItemsOrder: [MenuItem] = [.MY_QUESTS,
                                       .ALL_QUESTS,
                                       .CREATE_QUEST,

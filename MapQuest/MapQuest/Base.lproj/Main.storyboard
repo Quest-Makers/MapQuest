@@ -98,6 +98,64 @@
             </objects>
             <point key="canvasLocation" x="1004" y="117.39130434782609"/>
         </scene>
+        <!--Quest List View Controller-->
+        <scene sceneID="q4y-tR-gNa">
+            <objects>
+                <viewController storyboardIdentifier="QuestList" id="VdP-l4-UJw" customClass="QuestListViewController" customModule="MapQuest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kln-Tv-I39">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3FS-oB-wCx">
+                                <rect key="frame" x="0.0" y="44" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="53" id="hQw-en-3Rr" customClass="QuestTableViewCell" customModule="MapQuest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hQw-en-3Rr" id="ES7-zi-B9L">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quest Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-tU-Aha">
+                                                    <rect key="frame" x="10" y="15" width="95.5" height="22.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rUG-tU-Aha" secondAttribute="trailing" constant="10" id="Nb3-Hj-In3"/>
+                                                <constraint firstItem="rUG-tU-Aha" firstAttribute="leading" secondItem="ES7-zi-B9L" secondAttribute="leading" constant="10" id="XAB-NV-7ah"/>
+                                                <constraint firstItem="rUG-tU-Aha" firstAttribute="top" secondItem="ES7-zi-B9L" secondAttribute="top" constant="15" id="fQV-9j-sCe"/>
+                                                <constraint firstAttribute="bottom" secondItem="rUG-tU-Aha" secondAttribute="bottom" constant="15" id="qvY-Re-fzl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="questNameLabel" destination="rUG-tU-Aha" id="rgz-9D-h1j"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3FS-oB-wCx" firstAttribute="leading" secondItem="le2-1H-F3L" secondAttribute="leading" id="8Y0-3s-s1u"/>
+                            <constraint firstItem="3FS-oB-wCx" firstAttribute="top" secondItem="le2-1H-F3L" secondAttribute="top" constant="-20" id="MIF-77-xmo"/>
+                            <constraint firstItem="le2-1H-F3L" firstAttribute="trailing" secondItem="3FS-oB-wCx" secondAttribute="trailing" id="veS-Oe-I8s"/>
+                            <constraint firstItem="le2-1H-F3L" firstAttribute="bottom" secondItem="3FS-oB-wCx" secondAttribute="bottom" constant="20" id="z0R-8W-JNj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="le2-1H-F3L"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iRF-gI-dcN"/>
+                    <connections>
+                        <outlet property="questListTableView" destination="3FS-oB-wCx" id="wiK-z3-geq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BIL-Gs-HLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2790" y="438"/>
+        </scene>
         <!--Burger View Controller-->
         <scene sceneID="2os-3f-WIz">
             <objects>
@@ -203,6 +261,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExR-pm-xMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2754.4000000000001" y="-470.01499250374815"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rQw-t3-6PM">
+            <objects>
+                <navigationController storyboardIdentifier="QuestListsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="bVl-GB-Aav" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cqs-l2-49f">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VdP-l4-UJw" kind="relationship" relationship="rootViewController" id="xPN-pz-FC5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOg-A2-cUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008" y="438.0809595202399"/>
         </scene>
     </scenes>
 </document>

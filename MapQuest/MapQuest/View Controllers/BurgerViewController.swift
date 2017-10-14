@@ -15,7 +15,7 @@ class BurgerViewController: UIViewController {
     
     var originalLeftMargin: CGFloat!
     
-    var menuViewController: UIViewController! {
+    var menuViewController: MenuViewController! {
         didSet (oldMenuViewController) {
             
             view.layoutIfNeeded()
@@ -57,6 +57,14 @@ class BurgerViewController: UIViewController {
 
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         menuViewController = mainStoryboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        menuViewController.burgerViewController = self
+        
+        let questListNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "QuestListsNavigationController") as! UINavigationController
+        
+        if let questListViewController = questListNavigationController.topViewController as? QuestListViewController {
+            questListViewController.questList = MenuItem.ALL_QUESTS
+        }
+        contentNavigationController = questListNavigationController
     }
     
     @IBAction func onPanGesture(_ sender: UIPanGestureRecognizer) {

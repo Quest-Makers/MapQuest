@@ -21,6 +21,10 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var menuItemsTable: UITableView!
     
+    var burgerViewController: BurgerViewController!
+    
+    var questListNavigationController: UINavigationController!
+    
     let menuItemsOrder: [MenuItem] = [.MY_QUESTS,
                                       .ALL_QUESTS,
                                       .CREATE_QUEST,
@@ -41,6 +45,9 @@ class MenuViewController: UIViewController {
         
         menuItemsTable.estimatedRowHeight = 250
         menuItemsTable.rowHeight = UITableViewAutomaticDimension
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        questListNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "QuestListsNavigationController") as! UINavigationController
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,5 +77,20 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell") as! MenuItemTableViewCell
         cell.menuItem = menuItems[menuItemsOrder[indexPath.row]]
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let menuItem = menuItemsOrder[indexPath.row]
+        
+        if menuItem == MenuItem.CREATE_QUEST {
+            print ("CREATE A QUEST!")
+            return
+        }
+        
+        if let questListViewController = questListNavigationController.topViewController as? QuestListViewController {
+            questListViewController.questList = menuItem
+        }
+        burgerViewController.contentNavigationController = questListNavigationController
     }
 }

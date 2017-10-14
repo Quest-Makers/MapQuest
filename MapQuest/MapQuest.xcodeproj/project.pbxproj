@@ -10,6 +10,10 @@
 		4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */; };
 		4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */; };
 		4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */; };
+		45E79F2D1F92B384007AD6DE /* QuestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F2C1F92B384007AD6DE /* QuestTableViewCell.swift */; };
+		45E79F2F1F92B39F007AD6DE /* QuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F2E1F92B39F007AD6DE /* QuestListViewController.swift */; };
+		45E79F311F92B4E2007AD6DE /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F301F92B4E2007AD6DE /* Quest.swift */; };
+		45E79F341F92B555007AD6DE /* MapQuestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F331F92B555007AD6DE /* MapQuestClient.swift */; };
 		CEF412D41F8EF0FD00C482DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF412D31F8EF0FD00C482DE /* AppDelegate.swift */; };
 		CEF412D61F8EF0FD00C482DE /* CreateHuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF412D51F8EF0FD00C482DE /* CreateHuntViewController.swift */; };
 		CEF412D91F8EF0FD00C482DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412D71F8EF0FD00C482DE /* Main.storyboard */; };
@@ -27,6 +31,10 @@
 		4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerViewController.swift; sourceTree = "<group>"; };
 		4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		45E79F2C1F92B384007AD6DE /* QuestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTableViewCell.swift; sourceTree = "<group>"; };
+		45E79F2E1F92B39F007AD6DE /* QuestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListViewController.swift; sourceTree = "<group>"; };
+		45E79F301F92B4E2007AD6DE /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
+		45E79F331F92B555007AD6DE /* MapQuestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapQuestClient.swift; sourceTree = "<group>"; };
 		70A8A63EE59050F45042E8AF /* Pods-MapQuest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapQuest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest.debug.xcconfig"; sourceTree = "<group>"; };
 		76AD5C604864162296DF2EBD /* Pods-MapQuest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapQuest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest.release.xcconfig"; sourceTree = "<group>"; };
 		CEF412D01F8EF0FD00C482DE /* MapQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +65,7 @@
 		4591D76A1F90AE2A00BD7DA5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				45E79F2E1F92B39F007AD6DE /* QuestListViewController.swift */,
 				4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */,
 				4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */,
 				CEF412D51F8EF0FD00C482DE /* CreateHuntViewController.swift */,
@@ -68,9 +77,18 @@
 		4591D76B1F90AE3500BD7DA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				45E79F2C1F92B384007AD6DE /* QuestTableViewCell.swift */,
 				4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		45E79F321F92B50A007AD6DE /* API Clients */ = {
+			isa = PBXGroup;
+			children = (
+				45E79F331F92B555007AD6DE /* MapQuestClient.swift */,
+			);
+			path = "API Clients";
 			sourceTree = "<group>";
 		};
 		52E093277FCA074CE5EBB462 /* Frameworks */ = {
@@ -102,6 +120,7 @@
 		CEF412D21F8EF0FD00C482DE /* MapQuest */ = {
 			isa = PBXGroup;
 			children = (
+				45E79F321F92B50A007AD6DE /* API Clients */,
 				4591D76B1F90AE3500BD7DA5 /* Views */,
 				4591D76A1F90AE2A00BD7DA5 /* View Controllers */,
 				D074D82C1F906E8800B660C4 /* Models */,
@@ -117,6 +136,7 @@
 		D074D82C1F906E8800B660C4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				45E79F301F92B4E2007AD6DE /* Quest.swift */,
 				D074D82D1F906ED300B660C4 /* TreasureHunt.swift */,
 				D074D8311F906EFE00B660C4 /* ClueContent.swift */,
 				D074D8331F906F3D00B660C4 /* ScreenStage.swift */,
@@ -265,11 +285,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */,
+				45E79F341F92B555007AD6DE /* MapQuestClient.swift in Sources */,
 				D074D8361F90757E00B660C4 /* NewClueStageViewController.swift in Sources */,
+				45E79F2D1F92B384007AD6DE /* QuestTableViewCell.swift in Sources */,
 				CEF412D61F8EF0FD00C482DE /* CreateHuntViewController.swift in Sources */,
+				45E79F311F92B4E2007AD6DE /* Quest.swift in Sources */,
 				4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */,
 				D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */,
 				D074D8321F906EFE00B660C4 /* ClueContent.swift in Sources */,
+				45E79F2F1F92B39F007AD6DE /* QuestListViewController.swift in Sources */,
 				D074D82E1F906ED300B660C4 /* TreasureHunt.swift in Sources */,
 				CEF412D41F8EF0FD00C482DE /* AppDelegate.swift in Sources */,
 				4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */,

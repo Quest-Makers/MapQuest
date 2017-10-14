@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4591D76F1F90AEC700BD7DA5 /* Menus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4591D76E1F90AEC700BD7DA5 /* Menus.storyboard */; };
 		4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */; };
 		4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */; };
 		4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapQuest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4591D76E1F90AEC700BD7DA5 /* Menus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menus.storyboard; sourceTree = "<group>"; };
 		4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerViewController.swift; sourceTree = "<group>"; };
 		4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				CEF412D31F8EF0FD00C482DE /* AppDelegate.swift */,
 				CEF412DC1F8EF0FD00C482DE /* LaunchScreen.storyboard */,
 				CEF412D71F8EF0FD00C482DE /* Main.storyboard */,
-				4591D76E1F90AEC700BD7DA5 /* Menus.storyboard */,
 				CEF412DA1F8EF0FD00C482DE /* Assets.xcassets */,
 				CEF412DF1F8EF0FD00C482DE /* Info.plist */,
 			);
@@ -201,7 +198,6 @@
 				CEF412DE1F8EF0FD00C482DE /* LaunchScreen.storyboard in Resources */,
 				CEF412DB1F8EF0FD00C482DE /* Assets.xcassets in Resources */,
 				CEF412D91F8EF0FD00C482DE /* Main.storyboard in Resources */,
-				4591D76F1F90AEC700BD7DA5 /* Menus.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

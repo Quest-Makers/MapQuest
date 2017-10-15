@@ -17,14 +17,21 @@ class NewClueViewController: UIViewController {
 
     var delegate: NewClueViewControllerDelegate? = nil
     
+    @IBOutlet weak var answerTextField: UITextField!
+    @IBOutlet weak var hintTextView: UITextView!
+
     @IBAction func addNewClue(_ sender: Any) {
-        let clue = Clue()
+        let clue = Clue(hint: answerTextField.text!, answer: answerTextField.text!)
         delegate?.addClue?(clue: clue)
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newClueViewController = mainStoryboard.instantiateViewController(withIdentifier: "NewClueViewController") as! NewClueViewController
         newClueViewController.delegate = self.delegate
         self.navigationController?.pushViewController(newClueViewController, animated: true)
+    }
+    
+    @IBAction func finalize(_ sender: Any) {
+        delegate?.finished()
     }
     
     override func viewDidLoad() {

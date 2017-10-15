@@ -41,11 +41,15 @@ extension CreateQuestViewController: NewClueViewControllerDelegate {
     }
     
     func finished() {
+        print("Clues in Quest: ", quest.clues.count)
+        navigationController?.popToRootViewController(animated: true)
+        /*
         // save quest to network
         quest.save(success: {
             print("Quest saved to network!")
         }) { (error: Error) in
             print(error)
         }
+         */
     }
 }

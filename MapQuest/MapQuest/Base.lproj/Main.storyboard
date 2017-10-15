@@ -317,6 +317,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="WRx-D0-e3I"/>
                     </view>
+                    <connections>
+                        <outlet property="answerInput" destination="QHv-j8-s7G" id="4G1-I8-r5O"/>
+                        <outlet property="clueText" destination="VDj-Up-AfZ" id="rV2-MB-QJT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjn-XG-bQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

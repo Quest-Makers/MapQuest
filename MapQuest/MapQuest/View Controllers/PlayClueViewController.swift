@@ -12,6 +12,9 @@ class PlayClueViewController: UIViewController {
     
     var delegate: QuestDetailsViewController? = nil
 
+    @IBOutlet weak var clueText: UILabel!
+    @IBOutlet weak var answerInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

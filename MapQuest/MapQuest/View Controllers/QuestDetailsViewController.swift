@@ -20,6 +20,7 @@ class QuestDetailsViewController: UIViewController {
             
             questNameLabel.text = quest.name
             questStateLabel.text = Quest.getStringFromState(state: quest.state)
+            questDescriptionLabel.text = quest.questDescription
         }
     }
     

@@ -20,10 +20,12 @@ let COMPELTED_STRING: String! = "Completed"
 class Quest: NSObject {
     var name: String!
     var state: State
+    var questDescription: String
     
     init(questDict: NSDictionary) {
         name = questDict["name"] as! String
         state = Quest.getStateFromString(stateString: questDict["state"] as! String)
+        questDescription = questDict["questDescription"] as! String
     }
     
     class func getStateFromString(stateString: String!) -> State {
@@ -36,5 +38,17 @@ class Quest: NSObject {
         }
         
         return .ERROR
+    }
+    
+    class func getStringFromState(state: State) -> String {
+        if state == .IN_PROGRESS {
+            return IN_PROGRESS_STRING
+        }
+        
+        if state == .COMPLETED {
+            return COMPELTED_STRING
+        }
+        
+        return ""
     }
 }

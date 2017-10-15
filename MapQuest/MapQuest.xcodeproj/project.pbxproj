@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		458ECF031F92D68700C78FF1 /* QuestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ECF021F92D68700C78FF1 /* QuestDetailsViewController.swift */; };
 		4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */; };
 		4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */; };
 		4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapQuest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		458ECF021F92D68700C78FF1 /* QuestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDetailsViewController.swift; sourceTree = "<group>"; };
 		4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerViewController.swift; sourceTree = "<group>"; };
 		4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		4591D76A1F90AE2A00BD7DA5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				458ECF021F92D68700C78FF1 /* QuestDetailsViewController.swift */,
 				45E79F2E1F92B39F007AD6DE /* QuestListViewController.swift */,
 				4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */,
 				4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */,
@@ -294,6 +297,7 @@
 				D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */,
 				D074D8321F906EFE00B660C4 /* ClueContent.swift in Sources */,
 				45E79F2F1F92B39F007AD6DE /* QuestListViewController.swift in Sources */,
+				458ECF031F92D68700C78FF1 /* QuestDetailsViewController.swift in Sources */,
 				D074D82E1F906ED300B660C4 /* TreasureHunt.swift in Sources */,
 				CEF412D41F8EF0FD00C482DE /* AppDelegate.swift in Sources */,
 				4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */,

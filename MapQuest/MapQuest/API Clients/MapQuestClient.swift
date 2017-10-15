@@ -44,10 +44,10 @@ class MapQuestClient: NSObject {
         // temporary while we get Parse hooked up
         var quests: [Quest] = [Quest]()
         
-        quests.append(Quest(questDict: ["name": "All Quests 1", "state": "Completed"]))
-        quests.append(Quest(questDict: ["name": "All Quests 2", "state": "Completed"]))
-        quests.append(Quest(questDict: ["name": "All Quests 3", "state": "Completed"]))
-        quests.append(Quest(questDict: ["name": "All Quests 4", "state": "Completed"]))
+        quests.append(Quest(questDict: ["name": "All Quests 1", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
+        quests.append(Quest(questDict: ["name": "All Quests 2", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
+        quests.append(Quest(questDict: ["name": "All Quests 3", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
+        quests.append(Quest(questDict: ["name": "All Quests 4", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
 
         return completion(quests)
     }
@@ -56,20 +56,30 @@ class MapQuestClient: NSObject {
         // temporary while we get Parse hooked up
         var quests: [Quest] = [Quest]()
         
-        quests.append(Quest(questDict: ["name": "My Quests 1", "state": "Completed"]))
-        quests.append(Quest(questDict: ["name": "My Quests 2", "state": "Completed"]))
-        quests.append(Quest(questDict: ["name": "My Quests 3", "state": "Completed"]))
-        quests.append(Quest(questDict: ["name": "My Quests 4", "state": "Completed"]))
-        
+        quests.append(Quest(questDict: ["name": "My Quests 1", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
+        quests.append(Quest(questDict: ["name": "My Quests 2", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
+        quests.append(Quest(questDict: ["name": "My Quests 3", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
+        quests.append(Quest(questDict: ["name": "My Quests 4", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
+
         return completion(quests)
     }
     
     func fetchInProgressQuests(completion: ([Quest]) -> Void) -> Void {
-        return completion([Quest]())
+        fetchMyQuests { (quests: [Quest]) in
+            let inProgressQuests = quests.filter({ (quest: Quest) -> Bool in
+                quest.state == State.IN_PROGRESS
+            })
+            return completion(inProgressQuests)
+        }
     }
     
     func fetchCompletedQuests(completion: ([Quest]) -> Void) -> Void {
-        return completion([Quest]())
+        fetchMyQuests { (quests: [Quest]) in
+            let completedQuests = quests.filter({ (quest: Quest) -> Bool in
+                quest.state == State.COMPLETED
+            })
+            return completion(completedQuests)
+        }
     }
     
 }

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		457FB6351F93126300AFE609 /* Clue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FB6341F93126200AFE609 /* Clue.swift */; };
+		457FB6371F93141F00AFE609 /* NewClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FB6361F93141F00AFE609 /* NewClueViewController.swift */; };
 		458ECF031F92D68700C78FF1 /* QuestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ECF021F92D68700C78FF1 /* QuestDetailsViewController.swift */; };
+		458ECF051F92E86800C78FF1 /* CreateQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ECF041F92E86800C78FF1 /* CreateQuestViewController.swift */; };
 		4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */; };
 		4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */; };
 		4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */; };
@@ -16,20 +19,19 @@
 		45E79F311F92B4E2007AD6DE /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F301F92B4E2007AD6DE /* Quest.swift */; };
 		45E79F341F92B555007AD6DE /* MapQuestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F331F92B555007AD6DE /* MapQuestClient.swift */; };
 		CEF412D41F8EF0FD00C482DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF412D31F8EF0FD00C482DE /* AppDelegate.swift */; };
-		CEF412D61F8EF0FD00C482DE /* CreateHuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF412D51F8EF0FD00C482DE /* CreateHuntViewController.swift */; };
 		CEF412D91F8EF0FD00C482DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412D71F8EF0FD00C482DE /* Main.storyboard */; };
 		CEF412DB1F8EF0FD00C482DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF412DA1F8EF0FD00C482DE /* Assets.xcassets */; };
 		CEF412DE1F8EF0FD00C482DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412DC1F8EF0FD00C482DE /* LaunchScreen.storyboard */; };
-		D074D82E1F906ED300B660C4 /* TreasureHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D82D1F906ED300B660C4 /* TreasureHunt.swift */; };
-		D074D8321F906EFE00B660C4 /* ClueContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D8311F906EFE00B660C4 /* ClueContent.swift */; };
 		D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D8331F906F3D00B660C4 /* ScreenStage.swift */; };
-		D074D8361F90757E00B660C4 /* NewClueStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D8351F90757E00B660C4 /* NewClueStageViewController.swift */; };
 		E100F71BBC22E4A2792EABED /* Pods_MapQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapQuest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		457FB6341F93126200AFE609 /* Clue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clue.swift; sourceTree = "<group>"; };
+		457FB6361F93141F00AFE609 /* NewClueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClueViewController.swift; sourceTree = "<group>"; };
 		458ECF021F92D68700C78FF1 /* QuestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDetailsViewController.swift; sourceTree = "<group>"; };
+		458ECF041F92E86800C78FF1 /* CreateQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestViewController.swift; sourceTree = "<group>"; };
 		4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerViewController.swift; sourceTree = "<group>"; };
 		4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -41,15 +43,11 @@
 		76AD5C604864162296DF2EBD /* Pods-MapQuest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapQuest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest.release.xcconfig"; sourceTree = "<group>"; };
 		CEF412D01F8EF0FD00C482DE /* MapQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF412D31F8EF0FD00C482DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEF412D51F8EF0FD00C482DE /* CreateHuntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHuntViewController.swift; sourceTree = "<group>"; };
 		CEF412D81F8EF0FD00C482DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEF412DA1F8EF0FD00C482DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF412DD1F8EF0FD00C482DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF412DF1F8EF0FD00C482DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D074D82D1F906ED300B660C4 /* TreasureHunt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureHunt.swift; sourceTree = "<group>"; };
-		D074D8311F906EFE00B660C4 /* ClueContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueContent.swift; sourceTree = "<group>"; };
 		D074D8331F906F3D00B660C4 /* ScreenStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStage.swift; sourceTree = "<group>"; };
-		D074D8351F90757E00B660C4 /* NewClueStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClueStageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +69,8 @@
 				45E79F2E1F92B39F007AD6DE /* QuestListViewController.swift */,
 				4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */,
 				4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */,
-				CEF412D51F8EF0FD00C482DE /* CreateHuntViewController.swift */,
-				D074D8351F90757E00B660C4 /* NewClueStageViewController.swift */,
+				458ECF041F92E86800C78FF1 /* CreateQuestViewController.swift */,
+				457FB6361F93141F00AFE609 /* NewClueViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -139,9 +137,8 @@
 		D074D82C1F906E8800B660C4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				457FB6341F93126200AFE609 /* Clue.swift */,
 				45E79F301F92B4E2007AD6DE /* Quest.swift */,
-				D074D82D1F906ED300B660C4 /* TreasureHunt.swift */,
-				D074D8311F906EFE00B660C4 /* ClueContent.swift */,
 				D074D8331F906F3D00B660C4 /* ScreenStage.swift */,
 			);
 			path = Models;
@@ -288,17 +285,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */,
+				458ECF051F92E86800C78FF1 /* CreateQuestViewController.swift in Sources */,
 				45E79F341F92B555007AD6DE /* MapQuestClient.swift in Sources */,
-				D074D8361F90757E00B660C4 /* NewClueStageViewController.swift in Sources */,
+				457FB6371F93141F00AFE609 /* NewClueViewController.swift in Sources */,
 				45E79F2D1F92B384007AD6DE /* QuestTableViewCell.swift in Sources */,
-				CEF412D61F8EF0FD00C482DE /* CreateHuntViewController.swift in Sources */,
 				45E79F311F92B4E2007AD6DE /* Quest.swift in Sources */,
 				4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */,
 				D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */,
-				D074D8321F906EFE00B660C4 /* ClueContent.swift in Sources */,
 				45E79F2F1F92B39F007AD6DE /* QuestListViewController.swift in Sources */,
 				458ECF031F92D68700C78FF1 /* QuestDetailsViewController.swift in Sources */,
-				D074D82E1F906ED300B660C4 /* TreasureHunt.swift in Sources */,
+				457FB6351F93126300AFE609 /* Clue.swift in Sources */,
 				CEF412D41F8EF0FD00C482DE /* AppDelegate.swift in Sources */,
 				4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */,
 			);

@@ -9,6 +9,6 @@
 import UIKit
 
 class ScreenStage: NSObject {
-    var clueContents: [ClueContent] = []
+    var clueContents: [Clue] = []
 
 }

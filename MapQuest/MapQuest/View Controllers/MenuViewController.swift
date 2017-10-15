@@ -24,6 +24,7 @@ class MenuViewController: UIViewController {
     var burgerViewController: BurgerViewController!
     
     var questListNavigationController: UINavigationController!
+    var createQuestNavigationController: UINavigationController!
     
     let menuItemsOrder: [MenuItem] = [.MY_QUESTS,
                                       .ALL_QUESTS,
@@ -48,6 +49,8 @@ class MenuViewController: UIViewController {
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         questListNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "QuestListsNavigationController") as! UINavigationController
+        
+        createQuestNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "CreateQuestNavigationController") as! UINavigationController
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,7 +87,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         let menuItem = menuItemsOrder[indexPath.row]
         
         if menuItem == MenuItem.CREATE_QUEST {
-            print ("CREATE A QUEST!")
+            burgerViewController.contentNavigationController = createQuestNavigationController
             return
         }
         

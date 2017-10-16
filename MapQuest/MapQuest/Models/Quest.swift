@@ -49,6 +49,27 @@ class Quest: NSObject {
     
     func addClue(clue: Clue) {
         clues.append(clue)
+        
+        let userDefaults = UserDefaults.standard
+        var localQuests = userDefaults.object(forKey: "quests") as? [String] ?? [String]()
+        let existingQuestsWithName = localQuests.filter { (questName: String) -> Bool in
+            return questName == self.name
+        }
+        
+        if existingQuestsWithName.count == 0 {
+            localQuests.append(self.name)
+            userDefaults.set(localQuests, forKey: "quests")
+        }
+        
+        userDefaults.set(self.toDict(), forKey: "\(self.name!)")
+        userDefaults.synchronize()
+    }
+    
+    func toDict() -> NSDictionary {
+        return ["name": self.name,
+                "state": Quest.getStringFromState(state: self.state),
+                "questDescription": self.questDescription,
+                "clues": Clue.toList(clues: self.clues)]
     }
     
     func save(success: @escaping () -> Void, error: @escaping (Error) -> Void) -> Void {

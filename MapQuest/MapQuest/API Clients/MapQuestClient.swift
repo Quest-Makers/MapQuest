@@ -57,13 +57,12 @@ class MapQuestClient: NSObject {
     }
     
     func fetchMyQuests(completion: ([Quest]) -> Void) -> Void {
-        // temporary while we get Parse hooked up
-        var quests: [Quest] = [Quest]()
+        let userDefaults = UserDefaults.standard
+        let localQuestNames = userDefaults.object(forKey: "quests") as? [String] ?? [String]()
         
-        quests.append(Quest(questDict: ["name": "My Quests 1", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
-        quests.append(Quest(questDict: ["name": "My Quests 2", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
-        quests.append(Quest(questDict: ["name": "My Quests 3", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
-        quests.append(Quest(questDict: ["name": "My Quests 4", "state": "Completed", "questDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis in ex sed rutrum. Sed viverra vehicula turpis, sit amet pellentesque nunc interdum at. Nulla rutrum mi eu lacus congue rhoncus. Cras vel est velit. Pellentesque vel feugiat leo. Vestibulum fermentum felis nec diam viverra tempus. Sed sodales pulvinar nibh, sit amet fringilla turpis posuere eu. Curabitur varius accumsan facilisis. Etiam sit amet pharetra dui. Maecenas vehicula dignissim est, ac consectetur orci ullamcorper a."]))
+        let quests = localQuestNames.map { (questName: String) -> Quest in
+            return Quest(questDict: userDefaults.object(forKey: questName) as! NSDictionary)
+        }
 
         return completion(quests)
     }

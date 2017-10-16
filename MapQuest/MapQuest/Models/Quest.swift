@@ -47,6 +47,7 @@ class Quest: NSObject {
         quest["name"] = self.name
         quest["state"] = Quest.getStringFromState(state: self.state)
         quest["questDescription"] = self.questDescription
+        quest["clues"] = Clue.toList(clues: self.clues)
         quest.saveInBackground { (didSave, err) in
             if (didSave) {
                 return success()

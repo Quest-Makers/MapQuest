@@ -15,10 +15,10 @@ class QuestListViewController: UIViewController {
     @IBOutlet weak var questListTableView: UITableView!
     
     var quests: [Quest] = []
-    let fetchQuestByMenuItem: [MenuItem: (([Quest]) -> Void) -> Void] = [.ALL_QUESTS: MapQuestClient.getInstance().fetchAllQuests,
-                                                                         .MY_QUESTS: MapQuestClient.getInstance().fetchMyQuests,
-                                                                         .IN_PROGRESS: MapQuestClient.getInstance().fetchInProgressQuests,
-                                                                         .COMPLETED: MapQuestClient.getInstance().fetchCompletedQuests]
+    let fetchQuestByMenuItem: [MenuItem: (@escaping ([Quest]) -> Void) -> Void] = [.ALL_QUESTS: Quest.fetchAllQuests,
+                                                                                   .MY_QUESTS: Quest.fetchMyQuests,
+                                                                                   .IN_PROGRESS: Quest.fetchInProgressQuests,
+                                                                                   .COMPLETED: Quest.fetchCompletedQuests]
     
     var questList: MenuItem! {
         didSet {

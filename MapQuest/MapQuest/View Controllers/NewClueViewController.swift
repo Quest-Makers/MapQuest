@@ -24,7 +24,7 @@ class NewClueViewController: UIViewController {
 
     @IBAction func addNewClue(_ sender: Any) {
         wasAdded = true
-        let clue = Clue(hint: answerTextField.text!, answer: answerTextField.text!)
+        let clue = Clue(hint: hintTextView.text!, answer: answerTextField.text!)
         delegate?.addClue?(clue: clue)
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)

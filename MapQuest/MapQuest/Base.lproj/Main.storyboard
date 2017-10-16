@@ -305,6 +305,9 @@
                                 <rect key="frame" x="168" y="607" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Solve"/>
+                                <connections>
+                                    <action selector="solveClue:" destination="VeO-nl-oyN" eventType="touchUpInside" id="cvj-xA-jLx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clue text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDj-Up-AfZ">
                                 <rect key="frame" x="61" y="125" width="253" height="108"/>

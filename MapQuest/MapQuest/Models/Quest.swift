@@ -19,6 +19,8 @@ let IN_PROGRESS_STRING: String! = "In Progess"
 let COMPELTED_STRING: String! = "Completed"
 
 class Quest: NSObject {
+    static let className: String  = "Quest"
+    
     var name: String!
     var state: State!
     var questDescription: String!
@@ -43,7 +45,7 @@ class Quest: NSObject {
     }
     
     func save(success: @escaping () -> Void, error: @escaping (Error) -> Void) -> Void {
-        let quest = PFObject(className: "Quest")
+        let quest = PFObject(className: Quest.className)
         quest["name"] = self.name
         quest["state"] = Quest.getStringFromState(state: self.state)
         quest["questDescription"] = self.questDescription

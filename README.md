@@ -28,6 +28,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+
 <img src='https://github.com/Quest-Makers/MapQuest/blob/master/map.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 

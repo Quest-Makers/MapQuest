@@ -26,6 +26,13 @@ class Quest: NSObject {
     var questDescription: String!
     var clues: [Clue]!
     
+    init(questDict: PFObject) {
+        name = questDict["name"] as! String
+        state = Quest.getStateFromString(stateString: questDict["state"] as! String)
+        questDescription = questDict["questDescription"] as! String
+        clues = Clue.fromList(clueDicts: questDict["clues"] as? [NSDictionary] ?? [NSDictionary]())
+    }
+    
     init(questDict: NSDictionary) {
         name = questDict["name"] as! String
         state = Quest.getStateFromString(stateString: questDict["state"] as! String)
@@ -56,6 +63,22 @@ class Quest: NSObject {
             }
             return error(err!)
         }
+    }
+    
+    class func fetchAllQuests(completion: @escaping ([Quest]) -> Void) -> Void {
+        return MapQuestClient.getInstance().fetchAllQuests(completion: completion)
+    }
+    
+    class func fetchMyQuests(completion: @escaping ([Quest]) -> Void) -> Void {
+        return MapQuestClient.getInstance().fetchMyQuests(completion: completion)
+    }
+    
+    class func fetchInProgressQuests(completion: @escaping ([Quest]) -> Void) -> Void {
+        return MapQuestClient.getInstance().fetchInProgressQuests(completion: completion)
+    }
+    
+    class func fetchCompletedQuests(completion: @escaping ([Quest]) -> Void) -> Void {
+        return MapQuestClient.getInstance().fetchCompletedQuests(completion: completion)
     }
     
     class func getStateFromString(stateString: String!) -> State {

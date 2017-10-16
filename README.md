@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![Alt Text](https://media.giphy.com/media/3ov9jESrsn2FnZ7aww/giphy.gif)
+<img src='https://github.com/Quest-Makers/MapQuest/blob/master/map.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).

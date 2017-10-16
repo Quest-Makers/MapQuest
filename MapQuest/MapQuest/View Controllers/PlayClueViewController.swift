@@ -37,11 +37,6 @@ class PlayClueViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-//        wasAdded = true
-//        let clue = Clue(hint: answerTextField.text!, answer: answerTextField.text!)
-//        delegate?.addClue?(clue: clue)
-//
-
     }
     
     override func viewDidLoad() {

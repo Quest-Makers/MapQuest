@@ -8,10 +8,10 @@ Time spent: **X** hours spent in total
 ## User Stories
 
 The following **required** functionality is completed:
-- [ ] User can create a new "treasure hunt"
-- [ ] Treasure hunt consists of series of screens, each requires a code to be entered to reveal the next screen
-- [ ] Each screen includes customizeable text that serves as a clue
-- [ ] User can "play" a treasure hunt; entering correct code at each screen reveals next screen
+- [x] User can create a new "treasure hunt"
+- [x] Treasure hunt consists of series of screens, each requires a code to be entered to reveal the next screen
+- [x] Each screen includes customizeable text that serves as a clue
+- [x] User can "play" a treasure hunt; entering correct code at each screen reveals next screen
 
 
 The following **optional** features are implemented:
@@ -29,6 +29,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+<img src='https://media.giphy.com/media/3ov9jESrsn2FnZ7aww/giphy.gif' title='Video Walkthrough1' width='' alt='Video Walkthrough1' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

@@ -19,11 +19,18 @@ class PlayClueViewController: UIViewController {
     @IBAction func solveClue(_ sender: Any) {
         print("input:")
         print(answerInput.text)
-        print("correct answer:")
-        print(self.delegate?.quest.clues[clueProgress].answer)
         print(self.delegate?.quest.clues.count)
+        if clueProgress + 1 > (self.delegate?.quest.clues.count)! {
+            print("This is already the end")
+            return
+        }
         if answerInput.text == self.delegate?.quest.clues[clueProgress].answer {
             print("correct")
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let playClueViewController = mainStoryboard.instantiateViewController(withIdentifier: "PlayClueViewController") as! PlayClueViewController
+            playClueViewController.delegate = self.delegate
+            playClueViewController.clueProgress = self.clueProgress + 1
+            self.navigationController?.pushViewController(playClueViewController, animated: true)
         }
         else {
             let alert = UIAlertController(title: "Wrong", message: "Try again", preferredStyle: UIAlertControllerStyle.alert)
@@ -34,15 +41,14 @@ class PlayClueViewController: UIViewController {
 //        let clue = Clue(hint: answerTextField.text!, answer: answerTextField.text!)
 //        delegate?.addClue?(clue: clue)
 //
-//        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let newClueViewController = mainStoryboard.instantiateViewController(withIdentifier: "NewClueViewController") as! NewClueViewController
-//        newClueViewController.delegate = self.delegate
-//        self.navigationController?.pushViewController(newClueViewController, animated: true)
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        clueText.text = self.delegate?.quest.clues[clueProgress].hint
+        print("correct answer:")
+        print(self.delegate?.quest.clues[clueProgress].answer)
         // Do any additional setup after loading the view.
     }
 

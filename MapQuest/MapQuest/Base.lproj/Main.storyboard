@@ -289,7 +289,7 @@
         <!--Play Clue View Controller-->
         <scene sceneID="KaA-b8-noo">
             <objects>
-                <viewController id="VeO-nl-oyN" userLabel="Play Clue View Controller" customClass="PlayClueViewController" customModule="MapQuest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayClueViewController" id="VeO-nl-oyN" userLabel="Play Clue View Controller" customClass="PlayClueViewController" customModule="MapQuest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o5Z-Ra-hBW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -19,8 +19,11 @@ class NewClueViewController: UIViewController {
     
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var hintTextView: UITextView!
+    
+    var wasAdded: Bool = false
 
     @IBAction func addNewClue(_ sender: Any) {
+        wasAdded = true
         let clue = Clue(hint: answerTextField.text!, answer: answerTextField.text!)
         delegate?.addClue?(clue: clue)
         
@@ -31,6 +34,10 @@ class NewClueViewController: UIViewController {
     }
     
     @IBAction func finalize(_ sender: Any) {
+        if !wasAdded {
+            let clue = Clue(hint: answerTextField.text!, answer: answerTextField.text!)
+            delegate?.addClue?(clue: clue)
+        }
         delegate?.finished()
     }
     

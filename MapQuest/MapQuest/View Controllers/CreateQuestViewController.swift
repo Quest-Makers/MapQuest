@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDCAlertView
 
 class CreateQuestViewController: UIViewController {
 
@@ -48,13 +49,28 @@ extension CreateQuestViewController: NewClueViewControllerDelegate {
     func finished() {
         print("Clues in Quest: ", quest.clues.count)
         navigationController?.popToRootViewController(animated: true)
-        /*
+        
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        
+        let alert = AlertController(title: "Saving quest", message: "Trying to upload your awesome quest...")
+        alert.contentView.addSubview(spinner)
+        
+        spinner.centerXAnchor.constraint(equalTo: alert.contentView.centerXAnchor).isActive = true
+        spinner.topAnchor.constraint(equalTo: alert.contentView.topAnchor).isActive = true
+        spinner.bottomAnchor.constraint(equalTo: alert.contentView.bottomAnchor).isActive = true
+        
+        alert.present()
+        
         // save quest to network
         quest.save(success: {
+            self.titleTextField.text = ""
+            self.descriptionTextField.text = ""
+            AlertController.alert(withTitle: "Quest Created!", message: "Your quest is awesome!", actionTitle: "Thanks!")
             print("Quest saved to network!")
         }) { (error: Error) in
             print(error)
         }
-         */
     }
 }

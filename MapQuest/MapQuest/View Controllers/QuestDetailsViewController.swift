@@ -35,6 +35,16 @@ class QuestDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? PlayClueViewController {
+            destination.delegate = self
+            print("asd")
+            print(quest.clues)
+            print(quest.clues[0].hint)
+            print(quest.clues[0].answer)
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

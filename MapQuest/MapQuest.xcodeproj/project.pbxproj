@@ -22,6 +22,7 @@
 		CEF412D91F8EF0FD00C482DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412D71F8EF0FD00C482DE /* Main.storyboard */; };
 		CEF412DB1F8EF0FD00C482DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF412DA1F8EF0FD00C482DE /* Assets.xcassets */; };
 		CEF412DE1F8EF0FD00C482DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412DC1F8EF0FD00C482DE /* LaunchScreen.storyboard */; };
+		D06F29AD1F9414CF0076C85B /* PlayClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F29AC1F9414CF0076C85B /* PlayClueViewController.swift */; };
 		D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D8331F906F3D00B660C4 /* ScreenStage.swift */; };
 		E100F71BBC22E4A2792EABED /* Pods_MapQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		CEF412DA1F8EF0FD00C482DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF412DD1F8EF0FD00C482DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF412DF1F8EF0FD00C482DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D06F29AC1F9414CF0076C85B /* PlayClueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayClueViewController.swift; sourceTree = "<group>"; };
 		D074D8331F906F3D00B660C4 /* ScreenStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 				4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */,
 				458ECF041F92E86800C78FF1 /* CreateQuestViewController.swift */,
 				457FB6361F93141F00AFE609 /* NewClueViewController.swift */,
+				D06F29AC1F9414CF0076C85B /* PlayClueViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */,
+				D06F29AD1F9414CF0076C85B /* PlayClueViewController.swift in Sources */,
 				458ECF051F92E86800C78FF1 /* CreateQuestViewController.swift in Sources */,
 				45E79F341F92B555007AD6DE /* MapQuestClient.swift in Sources */,
 				457FB6371F93141F00AFE609 /* NewClueViewController.swift in Sources */,

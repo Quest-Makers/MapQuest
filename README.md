@@ -18,7 +18,7 @@ The following **optional** features are implemented:
 - [ ] When creating a new screen, creator can add text, images, and choose a geo location from a map
 - [ ] Can use curent gps location to set location for a screen
 - [ ] Can get list of hunts created by other users and play them
-- [ ] AR integration: some clues require you to point your phone camera at a physical location, which then reveals further clues
+- [ ] Geofencing: solve clues by carrying device to physical location
 
 
 The following **additional** features are implemented:

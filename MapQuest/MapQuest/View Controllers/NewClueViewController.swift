@@ -57,7 +57,18 @@ class NewClueViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func onPhotoLibraryPressed(_ sender: Any) {
+        
+        let photoVC = UIImagePickerController()
+        photoVC.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        photoVC.allowsEditing = true
+        photoVC.sourceType = .photoLibrary
+        
+        self.present(photoVC, animated: true) {
+            //do something custom here
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -68,4 +79,16 @@ class NewClueViewController: UIViewController {
     }
     */
 
+}
+
+extension NewClueViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // Get the image captured by the UIImagePickerController
+        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        //self.imageView.image = originalImage
+        self.dismiss(animated: true, completion: nil)
+        
+    }
 }

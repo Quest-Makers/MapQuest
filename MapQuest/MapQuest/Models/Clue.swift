@@ -28,7 +28,10 @@ class Clue: NSObject {
 
     class func toList(clues: [Clue]) -> [NSDictionary] {
         return clues.map({ (clue) -> NSDictionary in
-            return ["hint": clue.hint, "answer": clue.answer]
+            return ["hint": clue.hint,
+                    "answer": clue.answer,
+                    //"hints": clue.hints
+            ]
         })
     }
 }

@@ -19,12 +19,21 @@ class NewClueViewController: UIViewController {
     
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var hintTextView: UITextView!
+    var hintImage: UIImage?
+    var hintGeo: String?
     
     var wasAdded: Bool = false
 
     @IBAction func addNewClue(_ sender: Any) {
         wasAdded = true
-        let clue = Clue(hint: hintTextView.text!, answer: answerTextField.text!)
+        let hints = [
+            Hint(hintType: "text", image: nil, text: hintTextView.text, geo: nil),
+            Hint(hintType: "image", image: hintImage, text: answerTextField.text, geo: nil),
+            Hint(hintType: "geo", image: nil, text: nil, geo: "test"),
+        ]
+        let clue = Clue(hint: hintTextView.text!, answer: answerTextField.text!, hints: hints)
+        print("set clue")
+        print(clue.hints)
         delegate?.addClue?(clue: clue)
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -35,7 +44,7 @@ class NewClueViewController: UIViewController {
     
     @IBAction func finalize(_ sender: Any) {
         if !wasAdded {
-            let clue = Clue(hint: answerTextField.text!, answer: answerTextField.text!)
+            let clue = Clue(hint: answerTextField.text!, answer: answerTextField.text!, hints: [])
             delegate?.addClue?(clue: clue)
         }
         delegate?.finished()
@@ -88,7 +97,10 @@ extension NewClueViewController:UIImagePickerControllerDelegate,UINavigationCont
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         //self.imageView.image = originalImage
+        print("got an image")
+        self.hintImage = editedImage
+        print("set image")
         self.dismiss(animated: true, completion: nil)
-        
+        print("dismissed")
     }
 }

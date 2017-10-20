@@ -24,6 +24,7 @@
 		CEF412DE1F8EF0FD00C482DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412DC1F8EF0FD00C482DE /* LaunchScreen.storyboard */; };
 		D06F29AD1F9414CF0076C85B /* PlayClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F29AC1F9414CF0076C85B /* PlayClueViewController.swift */; };
 		D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D8331F906F3D00B660C4 /* ScreenStage.swift */; };
+		D07DE5C11F99A15100C1CE71 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DE5C01F99A15100C1CE71 /* Hint.swift */; };
 		E100F71BBC22E4A2792EABED /* Pods_MapQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		CEF412DF1F8EF0FD00C482DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D06F29AC1F9414CF0076C85B /* PlayClueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayClueViewController.swift; sourceTree = "<group>"; };
 		D074D8331F906F3D00B660C4 /* ScreenStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStage.swift; sourceTree = "<group>"; };
+		D07DE5C01F99A15100C1CE71 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				457FB6341F93126200AFE609 /* Clue.swift */,
 				45E79F301F92B4E2007AD6DE /* Quest.swift */,
 				D074D8331F906F3D00B660C4 /* ScreenStage.swift */,
+				D07DE5C01F99A15100C1CE71 /* Hint.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07DE5C11F99A15100C1CE71 /* Hint.swift in Sources */,
 				4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */,
 				D06F29AD1F9414CF0076C85B /* PlayClueViewController.swift in Sources */,
 				458ECF051F92E86800C78FF1 /* CreateQuestViewController.swift in Sources */,

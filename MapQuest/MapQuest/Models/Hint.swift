@@ -15,13 +15,17 @@ class Hint: PFObject, PFSubclassing {
     }
     
     let hintType: String!
-    let image: PFFile?
+    let image: Data?
     let text: String?
     let geo: String?
     
     init(hintType: String, image: UIImage?, text: String?, geo: String?) {
+        var imageData: Data?
+        if let image = image {
+            imageData = UIImagePNGRepresentation(image)
+        }
         self.hintType = hintType
-        self.image = Hint.getPFFileFromImage(image: image)
+        self.image = imageData
         self.text = text
         self.geo = geo
         super.init()
@@ -36,6 +40,15 @@ class Hint: PFObject, PFSubclassing {
             }
         }
         return nil
+    }
+    
+    class func toList(hints: [Hint]) -> [NSDictionary] {
+        return hints.map({ (hint) -> NSDictionary in
+            return ["hintType": hint.hintType,
+                    "text": hint.text,
+                    //"image": hint.image
+            ]
+        })
     }
     
 }

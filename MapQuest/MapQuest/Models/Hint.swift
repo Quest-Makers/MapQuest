@@ -31,22 +31,39 @@ class Hint: PFObject, PFSubclassing {
         super.init()
     }
     
-    class func getPFFileFromImage(image: UIImage?) -> PFFile? {
+    class func getPFFileFromImageData(imageData: Data?) -> PFFile? {
         // check if image is not nil
-        if let image = image {
             // get image data and check if that is not nil
-            if let imageData = UIImagePNGRepresentation(image) {
-                return PFFile(name: "image.png", data: imageData)
-            }
+        if let imageData = imageData {
+            return PFFile(name: "image.png", data: imageData)
         }
         return nil
     }
     
-    class func toList(hints: [Hint]) -> [NSDictionary] {
+    class func formatImageData(imageData: Data?, forParse: Bool?, hint: Hint) -> Any? {
+        // check if image is not nil
+        // get image data and check if that is not nil
+        if forParse! {
+            if let imageData = imageData {
+                return PFFile(name: "image.png", data: imageData)
+            }
+            return nil
+        }
+        else {
+            //let encodedData = NSKeyedArchiver.archivedData(withRootObject: imageData)
+            //return encodedData
+            return "just a string"
+        }
+    }
+    
+    class func toList(hints: [Hint], forParse: Bool?) -> [NSDictionary] {
         return hints.map({ (hint) -> NSDictionary in
+            print("hint list")
+            print(hint.image)
+            print(type(of: hint.image))
             return ["hintType": hint.hintType,
                     "text": hint.text,
-                    //"image": hint.image
+                    "image": formatImageData(imageData: hint.image, forParse: forParse, hint: hint)
             ]
         })
     }

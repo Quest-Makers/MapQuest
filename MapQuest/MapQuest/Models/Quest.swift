@@ -61,16 +61,16 @@ class Quest: NSObject {
             userDefaults.set(localQuests, forKey: "quests")
         }
         
-        userDefaults.set(self.toDict(), forKey: "\(self.name!)")
+        userDefaults.set(self.toDict(forParse: false), forKey: "\(self.name!)")
         userDefaults.synchronize()
     }
     
-    func toDict() -> NSDictionary {
+    func toDict(forParse: Bool?) -> NSDictionary {
         print("Quest to dict")
         return ["name": self.name,
                 "state": Quest.getStringFromState(state: self.state),
                 "questDescription": self.questDescription,
-                "clues": Clue.toList(clues: self.clues)]
+                "clues": Clue.toList(clues: self.clues, forParse: forParse)]
     }
     
     func save(success: @escaping () -> Void, error: @escaping (Error) -> Void) -> Void {
@@ -78,7 +78,7 @@ class Quest: NSObject {
         quest["name"] = self.name
         quest["state"] = Quest.getStringFromState(state: self.state)
         quest["questDescription"] = self.questDescription
-        quest["clues"] = Clue.toList(clues: self.clues)
+        quest["clues"] = Clue.toList(clues: self.clues, forParse: true)
         quest.saveInBackground { (didSave, err) in
             if (didSave) {
                 return success()

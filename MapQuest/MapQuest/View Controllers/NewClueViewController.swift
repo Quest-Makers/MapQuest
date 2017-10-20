@@ -29,7 +29,7 @@ class NewClueViewController: UIViewController {
         let hints = [
             Hint(hintType: "text", image: nil, text: hintTextView.text, geo: nil),
             Hint(hintType: "image", image: hintImage, text: answerTextField.text, geo: nil),
-            Hint(hintType: "geo", image: nil, text: nil, geo: "test"),
+            Hint(hintType: "geo", image: nil, text: "asd", geo: "test"),
         ]
         let clue = Clue(hint: hintTextView.text!, answer: answerTextField.text!, hints: hints)
         print("set clue")

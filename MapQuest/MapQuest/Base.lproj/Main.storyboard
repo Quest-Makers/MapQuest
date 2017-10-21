@@ -46,7 +46,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="X1u-5v-6LK" kind="show" id="iDD-GZ-rqw"/>
+                                    <segue destination="X1u-5v-6LK" kind="show" identifier="newClueSegue" id="iDD-GZ-rqw"/>
                                 </connections>
                             </button>
                         </subviews>

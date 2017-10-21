@@ -32,6 +32,28 @@ class CreateQuestViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier {
+            if ident == "newClueSegue" {
+                print("asd segue")
+                if titleTextField.text == "" {
+                    let alert = UIAlertController(title: "No", message: "Title Can't be blank", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                else if descriptionTextField.text == "" {
+                    let alert = UIAlertController(title: "No", message: "Description can't be blank", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                else {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         quest = Quest(name: titleTextField.text!, description: descriptionTextField.text!)
         if let destination = segue.destination as? NewClueViewController {

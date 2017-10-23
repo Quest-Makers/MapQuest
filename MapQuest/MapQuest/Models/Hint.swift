@@ -20,12 +20,7 @@ class Hint: PFObject, PFSubclassing {
     let geo: String?
     
     init(hintType: String, imageFile: PFFile?, text: String?, geo: String?) {
-//        var imageData: Data?
-//        var imageFile: PFFile?
-//        if let image = image {
-//            imageData = UIImagePNGRepresentation(image)
-//            imageFile = Hint.getPFFileFromImageData(imageData: imageData)
-//        }
+
         self.hintType = hintType
         self.image = imageFile
         self.text = text
@@ -34,8 +29,7 @@ class Hint: PFObject, PFSubclassing {
     }
     
     class func getPFFileFromImageData(imageData: Data?) -> PFFile? {
-        // check if image is not nil
-            // get image data and check if that is not nil
+
         if let imageData = imageData {
             return PFFile(name: "image.png", data: imageData)
         }
@@ -43,18 +37,13 @@ class Hint: PFObject, PFSubclassing {
     }
     
     class func formatImageData(imageFile: PFFile?, forParse: Bool?, hint: Hint) -> Any? {
-        // check if image is not nil
-        // get image data and check if that is not nil
+
         if forParse! {
             return imageFile
-//            if let imageData = imageData {
-//                return PFFile(name: "image.png", data: imageData)
-//            }
-//            return nil
+
         }
         else {
-            //let encodedData = NSKeyedArchiver.archivedData(withRootObject: imageData)
-            //return encodedData
+
             return "just a string"
         }
     }
@@ -73,9 +62,6 @@ class Hint: PFObject, PFSubclassing {
     
     class func fromList(hintDicts: [NSDictionary]) -> [Hint] {
         return hintDicts.map({ (hintDict) -> Hint in
-//            let hints = hintDict["hints"] as? [Hint] ?? []
-//            print("asd")
-//            print("hints")
             let hintType = hintDict["hintType"] as! String
             let hintText = hintDict["text"] as! String
             let hintImageFile = hintDict["image"] as? PFFile

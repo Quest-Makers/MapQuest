@@ -30,8 +30,6 @@ class Clue: NSObject {
             else {
                 hints = []
             }
-            print("asd")
-            print("hints")
             return Clue(hint: clueDict["hint"] as! String, answer: clueDict["answer"] as! String, hints: hints)
         })
     }

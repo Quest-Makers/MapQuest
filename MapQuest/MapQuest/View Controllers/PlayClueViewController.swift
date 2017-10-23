@@ -45,10 +45,14 @@ class PlayClueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         clueText.text = self.delegate?.quest.clues[clueProgress].hint
+        var hints = self.delegate?.quest.clues[self.clueProgress].hints
         print("correct answer:")
         print(self.delegate?.quest.clues[clueProgress].answer)
-        self.photoView.file = self.delegate?.quest.clues[clueProgress].hints[1].image as? PFFile
-        self.photoView.loadInBackground()
+        
+        if clueProgress < hints!.count {
+            self.photoView.file = self.delegate?.quest.clues[self.clueProgress].hints[1].image as? PFFile
+            self.photoView.loadInBackground()
+        }
         // Do any additional setup after loading the view.
     }
 

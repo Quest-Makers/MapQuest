@@ -15,9 +15,10 @@ The following **required** functionality is completed:
 
 
 The following **optional** features are implemented:
-- [ ] When creating a new screen, creator can add text, images, and choose a geo location from a map
-- [ ] Can use curent gps location to set location for a screen
-- [ ] Can get list of hunts created by other users and play them
+- [x] When creating new clues, creator can add text, images, and location
+- [ ] Can choose location from mapview
+- [x] Can use curent gps location to set location for a clue
+- [x] Can get list of hunts created by other users and play them
 - [ ] Geofencing: solve clues by carrying device to physical location
 
 

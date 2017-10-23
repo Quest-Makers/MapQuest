@@ -6,6 +6,7 @@ target 'MapQuest' do
   use_frameworks!
 	pod 'Parse'
   pod 'SDCAlertView', '~> 8.0'
+	pod 'ParseUI'
   # Pods for MapQuest
 
 end

@@ -27,6 +27,7 @@ class QuestListViewController: UIViewController {
                 { (quests: [Quest]) -> Void in
                     self.quests = quests
                     self.questListTableView.reloadData()
+                    print("qwe")
             })
         }
     }

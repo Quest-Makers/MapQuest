@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @objc protocol NewClueViewControllerDelegate {
     @objc optional func addClue(clue: Clue)
@@ -26,10 +27,15 @@ class NewClueViewController: UIViewController {
 
     @IBAction func addNewClue(_ sender: Any) {
         wasAdded = true
+        var hintImageFile: PFFile?
+        if self.hintImage != nil {
+            var imageData = UIImagePNGRepresentation(self.hintImage!)
+            hintImageFile = Hint.getPFFileFromImageData(imageData: imageData)
+        }
         let hints = [
-            Hint(hintType: "text", image: nil, text: hintTextView.text, geo: nil),
-            Hint(hintType: "image", image: hintImage, text: answerTextField.text, geo: nil),
-            Hint(hintType: "geo", image: nil, text: "asd", geo: "test"),
+            Hint(hintType: "text", imageFile: nil, text: hintTextView.text, geo: nil),
+            Hint(hintType: "image", imageFile: hintImageFile, text: answerTextField.text, geo: nil),
+            Hint(hintType: "geo", imageFile: nil, text: "asd", geo: "test"),
         ]
         let clue = Clue(hint: hintTextView.text!, answer: answerTextField.text!, hints: hints)
         print("set clue")
@@ -82,11 +88,14 @@ class NewClueViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+ */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("segue")
+        print(segue.destination)
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }
 

@@ -15,17 +15,19 @@ class Hint: PFObject, PFSubclassing {
     }
     
     let hintType: String!
-    let image: Data?
+    let image: PFFile?
     let text: String?
     let geo: String?
     
-    init(hintType: String, image: UIImage?, text: String?, geo: String?) {
-        var imageData: Data?
-        if let image = image {
-            imageData = UIImagePNGRepresentation(image)
-        }
+    init(hintType: String, imageFile: PFFile?, text: String?, geo: String?) {
+//        var imageData: Data?
+//        var imageFile: PFFile?
+//        if let image = image {
+//            imageData = UIImagePNGRepresentation(image)
+//            imageFile = Hint.getPFFileFromImageData(imageData: imageData)
+//        }
         self.hintType = hintType
-        self.image = imageData
+        self.image = imageFile
         self.text = text
         self.geo = geo
         super.init()
@@ -40,14 +42,15 @@ class Hint: PFObject, PFSubclassing {
         return nil
     }
     
-    class func formatImageData(imageData: Data?, forParse: Bool?, hint: Hint) -> Any? {
+    class func formatImageData(imageFile: PFFile?, forParse: Bool?, hint: Hint) -> Any? {
         // check if image is not nil
         // get image data and check if that is not nil
         if forParse! {
-            if let imageData = imageData {
-                return PFFile(name: "image.png", data: imageData)
-            }
-            return nil
+            return imageFile
+//            if let imageData = imageData {
+//                return PFFile(name: "image.png", data: imageData)
+//            }
+//            return nil
         }
         else {
             //let encodedData = NSKeyedArchiver.archivedData(withRootObject: imageData)
@@ -63,8 +66,23 @@ class Hint: PFObject, PFSubclassing {
             print(type(of: hint.image))
             return ["hintType": hint.hintType,
                     "text": hint.text,
-                    "image": formatImageData(imageData: hint.image, forParse: forParse, hint: hint)
+                    "image": formatImageData(imageFile: hint.image, forParse: forParse, hint: hint)
             ]
+        })
+    }
+    
+    class func fromList(hintDicts: [NSDictionary]) -> [Hint] {
+        return hintDicts.map({ (hintDict) -> Hint in
+//            let hints = hintDict["hints"] as? [Hint] ?? []
+//            print("asd")
+//            print("hints")
+            let hintType = hintDict["hintType"] as! String
+            let hintText = hintDict["text"] as! String
+            let hintImageFile = hintDict["image"] as? PFFile
+
+
+            var hintGeo = hintDict["geo"] as? String ?? ""
+            return Hint(hintType: hintType, imageFile: hintImageFile, text: hintText, geo: hintGeo)
         })
     }
     

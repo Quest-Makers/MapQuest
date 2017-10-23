@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class PlayClueViewController: UIViewController {
     
@@ -15,6 +17,7 @@ class PlayClueViewController: UIViewController {
 
     @IBOutlet weak var clueText: UILabel!
     @IBOutlet weak var answerInput: UITextField!
+    @IBOutlet weak var photoView: PFImageView!
     
     @IBAction func solveClue(_ sender: Any) {
         print("input:")
@@ -44,6 +47,8 @@ class PlayClueViewController: UIViewController {
         clueText.text = self.delegate?.quest.clues[clueProgress].hint
         print("correct answer:")
         print(self.delegate?.quest.clues[clueProgress].answer)
+        self.photoView.file = self.delegate?.quest.clues[clueProgress].hints[1].image as? PFFile
+        self.photoView.loadInBackground()
         // Do any additional setup after loading the view.
     }
 

@@ -140,6 +140,14 @@
                                     <action selector="onPhotoLibraryPressed:" destination="X1u-5v-6LK" eventType="touchUpInside" id="edf-Sp-Px6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eL-Fg-O2D">
+                                <rect key="frame" x="248" y="516" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="+ Location"/>
+                                <connections>
+                                    <segue destination="5zU-Z1-QaY" kind="presentation" id="mdm-l6-U3z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -324,6 +332,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTq-Xb-XJ3" customClass="PFImageView">
+                                <rect key="frame" x="16" y="241" width="343" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="WRx-D0-e3I"/>
@@ -331,6 +343,7 @@
                     <connections>
                         <outlet property="answerInput" destination="QHv-j8-s7G" id="4G1-I8-r5O"/>
                         <outlet property="clueText" destination="VDj-Up-AfZ" id="rV2-MB-QJT"/>
+                        <outlet property="photoView" destination="PTq-Xb-XJ3" id="XqS-7t-hXw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjn-XG-bQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -442,6 +455,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExR-pm-xMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3093.5999999999999" y="-470.01499250374815"/>
+        </scene>
+        <!--Location Picker View Controller-->
+        <scene sceneID="t4N-a3-VE0">
+            <objects>
+                <viewController id="5zU-Z1-QaY" customClass="LocationPickerViewController" customModule="MapQuest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1D1-ug-HYx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="set location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="po8-B2-gDm">
+                                <rect key="frame" x="166" y="134" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9x-2M-d9s">
+                                <rect key="frame" x="195" y="365" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="setLocationTap:" destination="5zU-Z1-QaY" eventType="touchUpInside" id="Y5B-HY-DMQ"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bDp-CD-VEY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="rTY-tV-Pxg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASY-G6-K2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="835.23238380809596"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rQw-t3-6PM">

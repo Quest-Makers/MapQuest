@@ -22,7 +22,16 @@ class Clue: NSObject {
     
     class func fromList(clueDicts: [NSDictionary]) -> [Clue] {
         return clueDicts.map({ (clueDict) -> Clue in
-            let hints = clueDict["hints"] as? [Hint] ?? []
+            print(clueDict["hints"] ?? "no hints")
+            var hints: [Hint]
+            if let hintsDict = clueDict["hints"] as? [NSDictionary] {
+                hints = Hint.fromList(hintDicts: hintsDict)
+            }
+            else {
+                hints = []
+            }
+            print("asd")
+            print("hints")
             return Clue(hint: clueDict["hint"] as! String, answer: clueDict["answer"] as! String, hints: hints)
         })
     }

@@ -2,17 +2,22 @@ PODS:
   - Bolts/Tasks (1.8.4)
   - Parse (1.15.2):
     - Bolts/Tasks (~> 1.8)
+  - ParseUI (1.2.0):
+    - Bolts/Tasks (~> 1.3)
+    - Parse (~> 1.9)
   - SDCAlertView (8.0.1)
 
 DEPENDENCIES:
   - Parse
+  - ParseUI
   - SDCAlertView (~> 8.0)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Parse: 7daa8804b876d250a65420534c97d2d786c3b0b4
+  ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   SDCAlertView: 0dac88159108e755a78ca8d789b3b82305accae4
 
-PODFILE CHECKSUM: 7738194e8653031b516e6e956a4ad6ef58815643
+PODFILE CHECKSUM: affbed9af6b164d4eb8afe92ce62f222c10eac0b
 
 COCOAPODS: 1.3.1

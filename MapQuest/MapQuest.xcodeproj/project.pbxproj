@@ -25,6 +25,7 @@
 		D06F29AD1F9414CF0076C85B /* PlayClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F29AC1F9414CF0076C85B /* PlayClueViewController.swift */; };
 		D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D8331F906F3D00B660C4 /* ScreenStage.swift */; };
 		D07DE5C11F99A15100C1CE71 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DE5C01F99A15100C1CE71 /* Hint.swift */; };
+		D0FC2D781F9D24D90082D772 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC2D771F9D24D90082D772 /* LocationPickerViewController.swift */; };
 		E100F71BBC22E4A2792EABED /* Pods_MapQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		D06F29AC1F9414CF0076C85B /* PlayClueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayClueViewController.swift; sourceTree = "<group>"; };
 		D074D8331F906F3D00B660C4 /* ScreenStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStage.swift; sourceTree = "<group>"; };
 		D07DE5C01F99A15100C1CE71 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
+		D0FC2D771F9D24D90082D772 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				458ECF041F92E86800C78FF1 /* CreateQuestViewController.swift */,
 				457FB6361F93141F00AFE609 /* NewClueViewController.swift */,
 				D06F29AC1F9414CF0076C85B /* PlayClueViewController.swift */,
+				D0FC2D771F9D24D90082D772 /* LocationPickerViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -239,12 +242,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCAlertView/SDCAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +312,7 @@
 				457FB6351F93126300AFE609 /* Clue.swift in Sources */,
 				CEF412D41F8EF0FD00C482DE /* AppDelegate.swift in Sources */,
 				4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */,
+				D0FC2D781F9D24D90082D772 /* LocationPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

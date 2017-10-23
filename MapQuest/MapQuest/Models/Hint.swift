@@ -17,9 +17,9 @@ class Hint: PFObject, PFSubclassing {
     let hintType: String!
     let image: PFFile?
     let text: String?
-    let geo: String?
+    let geo: PFGeoPoint?
     
-    init(hintType: String, imageFile: PFFile?, text: String?, geo: String?) {
+    init(hintType: String, imageFile: PFFile?, text: String?, geo: PFGeoPoint?) {
 
         self.hintType = hintType
         self.image = imageFile
@@ -48,6 +48,16 @@ class Hint: PFObject, PFSubclassing {
         }
     }
     
+    class func formatGeo(geo: PFGeoPoint?, forParse: Bool) -> Any? {
+        if forParse {
+            return geo
+        }
+        else {
+            return "geostring"
+        }
+    
+    }
+    
     class func toList(hints: [Hint], forParse: Bool?) -> [NSDictionary] {
         return hints.map({ (hint) -> NSDictionary in
             print("hint list")
@@ -55,7 +65,8 @@ class Hint: PFObject, PFSubclassing {
             print(type(of: hint.image))
             return ["hintType": hint.hintType,
                     "text": hint.text,
-                    "image": formatImageData(imageFile: hint.image, forParse: forParse, hint: hint)
+                    "image": formatImageData(imageFile: hint.image, forParse: forParse, hint: hint),
+                    "geo": formatGeo(geo: hint.geo, forParse: forParse!)
             ]
         })
     }
@@ -67,7 +78,7 @@ class Hint: PFObject, PFSubclassing {
             let hintImageFile = hintDict["image"] as? PFFile
 
 
-            var hintGeo = hintDict["geo"] as? String ?? ""
+            var hintGeo = hintDict["geo"] as? PFGeoPoint ?? nil
             return Hint(hintType: hintType, imageFile: hintImageFile, text: hintText, geo: hintGeo)
         })
     }

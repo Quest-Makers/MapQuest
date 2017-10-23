@@ -18,6 +18,8 @@ class PlayClueViewController: UIViewController {
     @IBOutlet weak var clueText: UILabel!
     @IBOutlet weak var answerInput: UITextField!
     @IBOutlet weak var photoView: PFImageView!
+    @IBOutlet weak var latLabel: UILabel!
+    @IBOutlet weak var lonLabel: UILabel!
     
     @IBAction func solveClue(_ sender: Any) {
         print("input:")
@@ -52,8 +54,15 @@ class PlayClueViewController: UIViewController {
         if clueProgress < hints!.count {
             self.photoView.file = self.delegate?.quest.clues[self.clueProgress].hints[1].image as? PFFile
             self.photoView.loadInBackground()
+            if let geo = hints![2].geo {
+                lonLabel.text = "\(geo.longitude)"
+                latLabel.text = "\(geo.latitude)"
+            }
         }
+        
+        
         // Do any additional setup after loading the view.
+        print("done")
     }
 
     override func didReceiveMemoryWarning() {

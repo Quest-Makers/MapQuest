@@ -21,7 +21,7 @@ class NewClueViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var hintTextView: UITextView!
     var hintImage: UIImage?
-    var hintGeo: String?
+    var hintGeo: PFGeoPoint?
     let locationManager = CLLocationManager()
     
     var wasAdded: Bool = false
@@ -36,7 +36,7 @@ class NewClueViewController: UIViewController, CLLocationManagerDelegate {
         let hints = [
             Hint(hintType: "text", imageFile: nil, text: hintTextView.text, geo: nil),
             Hint(hintType: "image", imageFile: hintImageFile, text: answerTextField.text, geo: nil),
-            Hint(hintType: "geo", imageFile: nil, text: "asd", geo: "test"),
+            Hint(hintType: "geo", imageFile: nil, text: "asd", geo: hintGeo),
         ]
         let clue = Clue(hint: hintTextView.text!, answer: answerTextField.text!, hints: hints)
         print("set clue")
@@ -111,6 +111,7 @@ class NewClueViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func onLocationTapped(_ sender: Any) {
         print("pressed location button")
         print(self.locationManager.location)
+        hintGeo = PFGeoPoint(location: locationManager.location)
 
     }
     

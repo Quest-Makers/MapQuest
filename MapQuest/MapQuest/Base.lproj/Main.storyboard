@@ -145,7 +145,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="+ Location"/>
                                 <connections>
-                                    <segue destination="5zU-Z1-QaY" kind="presentation" id="mdm-l6-U3z"/>
+                                    <action selector="onLocationTapped:" destination="X1u-5v-6LK" eventType="touchUpInside" id="lzC-Yz-qS7"/>
                                 </connections>
                             </button>
                         </subviews>

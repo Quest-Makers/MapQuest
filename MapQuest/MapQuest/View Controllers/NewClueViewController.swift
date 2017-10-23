@@ -14,7 +14,7 @@ import Parse
     func finished()
 }
 
-class NewClueViewController: UIViewController {
+class NewClueViewController: UIViewController, CLLocationManagerDelegate {
 
     var delegate: NewClueViewControllerDelegate? = nil
     
@@ -22,6 +22,7 @@ class NewClueViewController: UIViewController {
     @IBOutlet weak var hintTextView: UITextView!
     var hintImage: UIImage?
     var hintGeo: String?
+    let locationManager = CLLocationManager()
     
     var wasAdded: Bool = false
 
@@ -56,11 +57,31 @@ class NewClueViewController: UIViewController {
         delegate?.finished()
     }
     
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        var locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error.localizedDescription")
+    } 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        self.locationManager.requestWhenInUseAuthorization()
+        print("request here")
+        
+        if CLLocationManager.locationServicesEnabled() {
+            print("enabled here")
+            self.locationManager.delegate = self
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            self.locationManager.startUpdatingLocation()
+        }
+
     }
     
     @objc func dismissKeyboard() {
@@ -84,6 +105,15 @@ class NewClueViewController: UIViewController {
         }
         
     }
+    
+
+    
+    @IBAction func onLocationTapped(_ sender: Any) {
+        print("pressed location button")
+        print(self.locationManager.location)
+
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -95,6 +125,8 @@ class NewClueViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
+    
+
  
 
 }

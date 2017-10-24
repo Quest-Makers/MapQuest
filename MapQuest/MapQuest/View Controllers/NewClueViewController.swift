@@ -51,7 +51,17 @@ class NewClueViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func finalize(_ sender: Any) {
         if !wasAdded {
-            let clue = Clue(hint: answerTextField.text!, answer: answerTextField.text!, hints: [])
+            var hintImageFile: PFFile?
+            if self.hintImage != nil {
+                var imageData = UIImagePNGRepresentation(self.hintImage!)
+                hintImageFile = Hint.getPFFileFromImageData(imageData: imageData)
+            }
+            let hints = [
+                Hint(hintType: "text", imageFile: nil, text: hintTextView.text, geo: nil),
+                Hint(hintType: "image", imageFile: hintImageFile, text: answerTextField.text, geo: nil),
+                Hint(hintType: "geo", imageFile: nil, text: "asd", geo: hintGeo),
+                ]
+            let clue = Clue(hint: hintTextView.text!, answer: answerTextField.text!, hints: hints)
             delegate?.addClue?(clue: clue)
         }
         delegate?.finished()

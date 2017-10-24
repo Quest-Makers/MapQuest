@@ -20,6 +20,7 @@ class PlayClueViewController: UIViewController {
     @IBOutlet weak var photoView: PFImageView!
     @IBOutlet weak var latLabel: UILabel!
     @IBOutlet weak var lonLabel: UILabel!
+    @IBOutlet weak var solveButton: UIButton!
     
     @IBAction func solveClue(_ sender: Any) {
         print("input:")
@@ -50,8 +51,11 @@ class PlayClueViewController: UIViewController {
         var hints = self.delegate?.quest.clues[self.clueProgress].hints
         print("correct answer:")
         print(self.delegate?.quest.clues[clueProgress].answer)
-        
-        if clueProgress < hints!.count {
+        if clueProgress + 1 >= (self.delegate?.quest.clues.count)! {
+            solveButton.isHidden = true
+            answerInput.isHidden = true
+        }
+        if clueProgress <= hints!.count {
             self.photoView.file = self.delegate?.quest.clues[self.clueProgress].hints[1].image as? PFFile
             self.photoView.loadInBackground()
             if let geo = hints![2].geo {

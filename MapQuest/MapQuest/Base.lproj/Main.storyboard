@@ -374,6 +374,7 @@
                         <outlet property="latLabel" destination="F9o-IR-eBz" id="R8S-Gc-sy1"/>
                         <outlet property="lonLabel" destination="NPD-KD-Egd" id="FlN-Yb-EAF"/>
                         <outlet property="photoView" destination="PTq-Xb-XJ3" id="XqS-7t-hXw"/>
+                        <outlet property="solveButton" destination="KVK-Bq-B5Z" id="Spi-WH-DZU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjn-XG-bQl" userLabel="First Responder" sceneMemberID="firstResponder"/>

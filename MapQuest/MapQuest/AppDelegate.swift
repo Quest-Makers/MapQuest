@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        // theming
+        
+        //UIView.appearance().font = UIFont(name: <#T##String#>, size: <#T##CGFloat#>)
+
+        
         // initialize API Client
         MapQuestClient.initializeClient()
         

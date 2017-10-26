@@ -13,14 +13,37 @@ class CreateQuestViewController: UIViewController {
 
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var getStartedButton: UIButton!
+    @IBOutlet weak var bgImage: UIImageView!
     
     var quest: Quest!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        getStartedButton.layer.cornerRadius = 10
+        getStartedButton.clipsToBounds = true
+        updateStartButton()
+    }
+    
+    @IBAction func descChanged(_ sender: Any) {
+        updateStartButton()
+    }
+    @IBAction func titleChanged(_ sender: Any) {
+        updateStartButton()
+    }
+    
+    func updateStartButton() {
+        if titleTextField.text != "" && descriptionTextField.text != "" {
+            getStartedButton.backgroundColor = UIColor(red: 0.4, green: 1.0, blue: 0.2, alpha: 0.5)
+            getStartedButton.setTitleColor(UIColor.white, for: [])
+        }
+        else {
+            getStartedButton.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.5)
+            getStartedButton.setTitleColor(UIColor.gray, for: [])
+        }
     }
     
     @objc func dismissKeyboard() {
@@ -95,4 +118,7 @@ extension CreateQuestViewController: NewClueViewControllerDelegate {
             print(error)
         }
     }
+    
 }
+
+

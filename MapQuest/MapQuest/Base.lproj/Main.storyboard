@@ -17,34 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0LJ-et-aCN">
-                                <rect key="frame" x="141.5" y="280" width="92.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6p-sE-eJM">
-                                <rect key="frame" x="168.5" y="89" width="38" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFk-oM-hdx">
-                                <rect key="frame" x="10" y="125" width="355" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass" translatesAutoresizingMaskIntoConstraints="NO" id="um0-tO-UG7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title: Give your Quest a name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFk-oM-hdx">
+                                <rect key="frame" x="10" y="184" width="355" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="titleChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="i1s-uu-UtG"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-0l-J3L">
-                                <rect key="frame" x="10" y="316" width="355" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write an enticing description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-0l-J3L">
+                                <rect key="frame" x="10" y="375" width="355" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="descChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="izY-h2-cVC"/>
+                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heE-K2-TaN">
-                                <rect key="frame" x="132" y="471" width="110" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heE-K2-TaN">
+                                <rect key="frame" x="60" y="512" width="255" height="46"/>
+                                <color key="backgroundColor" red="0.2929090171165854" green="0.67064038212435229" blue="0.070597656950970533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Continue"/>
+                                <color key="tintColor" red="0.96462007729999999" green="1" blue="0.96668821449999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="  Get Started  ">
+                                    <color key="titleShadowColor" red="0.2792260362694301" green="0.2792260362694301" blue="0.2792260362694301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="X1u-5v-6LK" kind="show" identifier="newClueSegue" id="iDD-GZ-rqw"/>
                                 </connections>
@@ -53,29 +54,27 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KFk-oM-hdx" secondAttribute="trailing" constant="10" id="0TM-cF-hM5"/>
-                            <constraint firstItem="0LJ-et-aCN" firstAttribute="top" secondItem="KFk-oM-hdx" secondAttribute="bottom" constant="125" id="A1o-jt-BcF"/>
-                            <constraint firstItem="J6p-sE-eJM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F9p-Zo-s5L"/>
+                            <constraint firstItem="um0-tO-UG7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4az-Xh-yOl"/>
+                            <constraint firstItem="KFk-oM-hdx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="AMY-eF-kiJ"/>
+                            <constraint firstItem="Jaz-0l-J3L" firstAttribute="top" secondItem="KFk-oM-hdx" secondAttribute="bottom" constant="161" id="FlN-1H-1I5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jaz-0l-J3L" secondAttribute="trailing" constant="10" id="HCf-U7-Jgo"/>
-                            <constraint firstItem="KFk-oM-hdx" firstAttribute="top" secondItem="J6p-sE-eJM" secondAttribute="bottom" constant="15" id="JJ2-j0-dfv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="heE-K2-TaN" secondAttribute="bottom" constant="150" id="RYg-TG-FSJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0LJ-et-aCN" secondAttribute="trailing" constant="10" id="SFZ-yp-3we"/>
-                            <constraint firstItem="Jaz-0l-J3L" firstAttribute="top" secondItem="0LJ-et-aCN" secondAttribute="bottom" constant="15" id="ShB-Ey-Om7"/>
-                            <constraint firstItem="J6p-sE-eJM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="a7J-6r-W2n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="heE-K2-TaN" secondAttribute="bottom" constant="100" id="RYg-TG-FSJ"/>
+                            <constraint firstItem="um0-tO-UG7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TFP-V9-gx7"/>
+                            <constraint firstItem="um0-tO-UG7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="V3V-Pm-Ifa"/>
                             <constraint firstItem="KFk-oM-hdx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gpy-AJ-kk7"/>
-                            <constraint firstItem="J6p-sE-eJM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="jQd-mv-RpB"/>
-                            <constraint firstItem="0LJ-et-aCN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="jog-EM-sfv"/>
                             <constraint firstItem="Jaz-0l-J3L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="kY0-ej-2ZO"/>
                             <constraint firstItem="heE-K2-TaN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oZe-bm-uwv"/>
-                            <constraint firstItem="0LJ-et-aCN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pqR-bU-SzJ"/>
                             <constraint firstItem="Jaz-0l-J3L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rsP-l4-HDc"/>
                             <constraint firstItem="KFk-oM-hdx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="sYW-v4-fCJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="J6p-sE-eJM" secondAttribute="trailing" constant="15" id="y9k-ME-ERC"/>
+                            <constraint firstItem="um0-tO-UG7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wXm-GL-gqT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZnE-ck-bGS"/>
                     <connections>
+                        <outlet property="bgImage" destination="um0-tO-UG7" id="hA9-LO-jnf"/>
                         <outlet property="descriptionTextField" destination="Jaz-0l-J3L" id="sMd-MN-cwr"/>
+                        <outlet property="getStartedButton" destination="heE-K2-TaN" id="wpX-DJ-iWa"/>
                         <outlet property="titleTextField" destination="KFk-oM-hdx" id="9qW-PE-JJf"/>
                     </connections>
                 </viewController>
@@ -560,4 +559,7 @@
             <point key="canvasLocation" x="-270" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compass" width="4216" height="2558"/>
+    </resources>
 </document>

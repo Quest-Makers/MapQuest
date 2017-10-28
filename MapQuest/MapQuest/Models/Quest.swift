@@ -66,7 +66,6 @@ class Quest: NSObject {
     }
     
     func toDict(forParse: Bool?) -> NSDictionary {
-        print("Quest to dict")
         return ["name": self.name,
                 "state": Quest.getStringFromState(state: self.state),
                 "questDescription": self.questDescription,

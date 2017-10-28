@@ -53,6 +53,17 @@ class Hint: NSObject {
         self.geo = geo
     }
     
+    func isValid() -> Bool {
+        if self.hintType == HintType.TEXT {
+            if let text = self.text as String! {
+                if text != "" {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
     class func getPFFileFromImageData(imageData: Data?) -> PFFile? {
 
         if let imageData = imageData {
@@ -85,14 +96,8 @@ class Hint: NSObject {
     
     class func toList(hints: [Hint], forParse: Bool?) -> [NSDictionary] {
         return hints.map({ (hint) -> NSDictionary in
-            print("hint list")
-            print(hint.image)
-            print(type(of: hint.image))
-            return ["hintType": hint.hintType,
-                    "text": hint.text,
-                    "image": formatImageData(imageFile: hint.image, forParse: forParse, hint: hint),
-                    "geo": formatGeo(geo: hint.geo, forParse: forParse!)
-            ]
+            return ["hintType": hintTypetoHintString(hintType: hint.hintType),
+                    "text": hint.text]
         })
     }
     
@@ -100,11 +105,7 @@ class Hint: NSObject {
         return hintDicts.map({ (hintDict) -> Hint in
             let hintType = hintDict["hintType"] as! String
             let hintText = hintDict["text"] as! String
-            let hintImageFile = hintDict["image"] as? PFFile
-
-
-            var hintGeo = hintDict["geo"] as? PFGeoPoint ?? nil
-            return Hint(hintType: hintType, imageFile: hintImageFile, text: hintText, geo: hintGeo)
+            return Hint(hintType: hintType, imageFile: nil, text: hintText, geo: nil)
         })
     }
     

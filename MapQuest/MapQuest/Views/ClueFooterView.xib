@@ -49,15 +49,18 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-Lv-BBP">
-                    <rect key="frame" x="15" y="203" width="63" height="30"/>
-                    <state key="normal" title="Add Clue"/>
+                    <rect key="frame" x="15" y="203" width="122" height="30"/>
+                    <state key="normal" title="Add Another Clue"/>
                     <connections>
                         <action selector="addClue:" destination="iN0-l3-epB" eventType="touchUpInside" id="Icf-RK-dwL"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSo-PJ-iSR">
-                    <rect key="frame" x="308" y="203" width="52" height="30"/>
-                    <state key="normal" title="Finalize"/>
+                    <rect key="frame" x="323" y="203" width="37" height="30"/>
+                    <state key="normal" title="Done"/>
+                    <connections>
+                        <action selector="finalize:" destination="iN0-l3-epB" eventType="touchUpInside" id="nC9-r9-oAv"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
@@ -82,6 +85,9 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="answerTextField" destination="jtj-P5-dqh" id="9Ga-kz-v1u"/>
+            </connections>
             <point key="canvasLocation" x="34.5" y="-150"/>
         </view>
     </objects>

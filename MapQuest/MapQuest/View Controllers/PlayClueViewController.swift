@@ -47,7 +47,7 @@ class PlayClueViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        clueText.text = self.delegate?.quest.clues[clueProgress].hint
+        //clueText.text = self.delegate?.quest.clues[clueProgress].hint
         var hints = self.delegate?.quest.clues[self.clueProgress].hints
         print("correct answer:")
         print(self.delegate?.quest.clues[clueProgress].answer)

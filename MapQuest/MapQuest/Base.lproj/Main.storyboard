@@ -525,7 +525,7 @@
         <!--Clue Prime View Controller-->
         <scene sceneID="8Kf-5b-3Oe">
             <objects>
-                <viewController id="8zU-SL-b7G" customClass="CluePrimeViewController" customModule="MapQuest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CluePrimeViewController" id="8zU-SL-b7G" customClass="CluePrimeViewController" customModule="MapQuest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RoX-Tn-807">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

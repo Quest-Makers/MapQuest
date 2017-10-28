@@ -10,15 +10,33 @@ import UIKit
 
 protocol ClueFooterViewDelegate {
     func addHint(hintType: HintType)
-    func addClue()
+    func addClue(answerText: String)
+    func finalClue()
 }
 
 class ClueFooterView: UIView {
     
     var delegate: ClueFooterViewDelegate? = nil
 
+    @IBOutlet weak var answerTextField: UITextField!
+    
+    @IBAction func finalize(_ sender: Any) {
+        if let text = answerTextField.text as String! {
+            if text != "" {
+                self.delegate?.addClue(answerText: text)
+                self.delegate?.finalClue()
+            }
+        }
+    }
+    
     @IBAction func addClue(_ sender: Any) {
-        self.delegate?.addClue()
+        if let text = answerTextField.text as String! {
+            if text != "" {
+                self.delegate?.addClue(answerText: text)
+                return
+            }
+        }
+        // error out, can't have empty answer text
     }
     
     @IBAction func addGeoHint(_ sender: Any) {

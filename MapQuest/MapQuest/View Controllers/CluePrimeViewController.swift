@@ -73,13 +73,34 @@ extension CluePrimeViewController: UITableViewDataSource {
 }
 
 extension CluePrimeViewController: ClueFooterViewDelegate {
+    
     func addHint(hintType: HintType) {
         hints.append(Hint(hintType: HintType.TEXT))
         self.tableView.reloadData()
     }
     
-    func addClue() {
+    func addClue(answerText: String) {
         print(hints)
-        // pass the hints back to the delegate (NewClueViewControllerDelegate)
+        let validHints = hints.reduce(true) { (isValid, hint) -> Bool in
+            return isValid && hint.isValid()
+        }
+        
+        if !validHints {
+            // display error message
+            return
+        }
+        
+        let clue = Clue(answer: answerText, hints: hints)
+        delegate?.addClue?(clue: clue)
+        
+        // next clue
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let cluePrimeViewController = mainStoryboard.instantiateViewController(withIdentifier: "CluePrimeViewController") as! CluePrimeViewController
+        cluePrimeViewController.delegate = self.delegate
+        self.navigationController?.pushViewController(cluePrimeViewController, animated: true)
+    }
+    
+    func finalClue() {
+        self.delegate?.finished()
     }
 }

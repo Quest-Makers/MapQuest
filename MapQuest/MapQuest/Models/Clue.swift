@@ -9,13 +9,11 @@
 import UIKit
 
 class Clue: NSObject {
-    
-    var hint: String!
+
     var answer: String!
     var hints = [Hint]()
     
-    init(hint: String, answer: String, hints: [Hint]) {
-        self.hint = hint
+    init(answer: String, hints: [Hint]) {
         self.answer = answer
         self.hints = hints
     }
@@ -30,16 +28,14 @@ class Clue: NSObject {
             else {
                 hints = []
             }
-            return Clue(hint: clueDict["hint"] as! String, answer: clueDict["answer"] as! String, hints: hints)
+            return Clue(answer: clueDict["answer"] as! String, hints: hints)
         })
     }
 
     class func toList(clues: [Clue], forParse: Bool?) -> [NSDictionary] {
         return clues.map({ (clue) -> NSDictionary in
-            return ["hint": clue.hint,
-                    "answer": clue.answer,
-                    "hints": Hint.toList(hints: clue.hints, forParse: forParse)
-            ]
+            return ["answer": clue.answer,
+                    "hints": Hint.toList(hints: clue.hints, forParse: forParse)]
         })
     }
 }

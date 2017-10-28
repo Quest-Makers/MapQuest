@@ -29,6 +29,7 @@ class NewClueViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func addNewClue(_ sender: Any) {
         wasAdded = true
         var hintImageFile: PFFile?
+        
         if self.hintImage != nil {
             var imageData = UIImagePNGRepresentation(self.hintImage!)
             hintImageFile = Hint.getPFFileFromImageData(imageData: imageData)
@@ -38,7 +39,7 @@ class NewClueViewController: UIViewController, CLLocationManagerDelegate {
             Hint(hintType: "image", imageFile: hintImageFile, text: answerTextField.text, geo: nil),
             Hint(hintType: "geo", imageFile: nil, text: "asd", geo: hintGeo),
         ]
-        let clue = Clue(hint: hintTextView.text!, answer: answerTextField.text!, hints: hints)
+        let clue = Clue(answer: answerTextField.text!, hints: hints)
         print("set clue")
         print(clue.hints)
         delegate?.addClue?(clue: clue)
@@ -61,7 +62,7 @@ class NewClueViewController: UIViewController, CLLocationManagerDelegate {
                 Hint(hintType: "image", imageFile: hintImageFile, text: answerTextField.text, geo: nil),
                 Hint(hintType: "geo", imageFile: nil, text: "asd", geo: hintGeo),
                 ]
-            let clue = Clue(hint: hintTextView.text!, answer: answerTextField.text!, hints: hints)
+            let clue = Clue(answer: answerTextField.text!, hints: hints)
             delegate?.addClue?(clue: clue)
         }
         delegate?.finished()

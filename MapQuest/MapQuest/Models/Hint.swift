@@ -9,23 +9,59 @@
 import UIKit
 import Parse
 
-class Hint: PFObject, PFSubclassing {
-    static func parseClassName() -> String {
-        return "Hint"
+enum HintType {
+    case TEXT
+    case PHOTO
+    case GEOLOCATION
+    case ERROR
+}
+
+class Hint: NSObject {
+    
+    static func hintStringToHintType(hintTypeString: String) -> HintType {
+        if hintTypeString == "text" {
+            return HintType.TEXT
+        }
+        return HintType.ERROR
     }
     
-    let hintType: String!
+    static func hintTypetoHintString(hintType: HintType) -> String {
+        if hintType == HintType.TEXT {
+            return "text"
+        }
+        return "error"
+    }
+    
+    let hintType: HintType!
     let image: PFFile?
-    let text: String?
+    var text: String?
     let geo: PFGeoPoint?
+
+    init(hintType: HintType) {
+        self.hintType = hintType
+        if hintType == HintType.TEXT {
+            self.text = ""
+        }
+        self.image = nil
+        self.geo = nil
+    }
     
     init(hintType: String, imageFile: PFFile?, text: String?, geo: PFGeoPoint?) {
-
-        self.hintType = hintType
+        self.hintType = Hint.hintStringToHintType(hintTypeString: hintType)
         self.image = imageFile
         self.text = text
         self.geo = geo
-        super.init()
+    }
+    
+    func isValid() -> Bool {
+        if self.hintType == HintType.TEXT {
+            if let text = self.text as String! {
+                if text != "" {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     class func getPFFileFromImageData(imageData: Data?) -> PFFile? {
@@ -60,14 +96,8 @@ class Hint: PFObject, PFSubclassing {
     
     class func toList(hints: [Hint], forParse: Bool?) -> [NSDictionary] {
         return hints.map({ (hint) -> NSDictionary in
-            print("hint list")
-            print(hint.image)
-            print(type(of: hint.image))
-            return ["hintType": hint.hintType,
-                    "text": hint.text,
-                    "image": formatImageData(imageFile: hint.image, forParse: forParse, hint: hint),
-                    "geo": formatGeo(geo: hint.geo, forParse: forParse!)
-            ]
+            return ["hintType": hintTypetoHintString(hintType: hint.hintType),
+                    "text": hint.text]
         })
     }
     
@@ -75,11 +105,7 @@ class Hint: PFObject, PFSubclassing {
         return hintDicts.map({ (hintDict) -> Hint in
             let hintType = hintDict["hintType"] as! String
             let hintText = hintDict["text"] as! String
-            let hintImageFile = hintDict["image"] as? PFFile
-
-
-            var hintGeo = hintDict["geo"] as? PFGeoPoint ?? nil
-            return Hint(hintType: hintType, imageFile: hintImageFile, text: hintText, geo: hintGeo)
+            return Hint(hintType: hintType, imageFile: nil, text: hintText, geo: nil)
         })
     }
     

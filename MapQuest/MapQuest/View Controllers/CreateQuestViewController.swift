@@ -79,7 +79,7 @@ class CreateQuestViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         quest = Quest(name: titleTextField.text!, description: descriptionTextField.text!)
-        if let destination = segue.destination as? NewClueViewController {
+        if let destination = segue.destination as? CluePrimeViewController {
             destination.delegate = self
         }
     }

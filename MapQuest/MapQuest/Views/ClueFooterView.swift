@@ -12,6 +12,7 @@ protocol ClueFooterViewDelegate {
     func addTextHint()
     func addPhotoHint()
     func addClue(answerText: String)
+    func invalidAnswer()
     func finalClue()
 }
 
@@ -37,7 +38,7 @@ class ClueFooterView: UIView {
                 return
             }
         }
-        // error out, can't have empty answer text
+        delegate?.invalidAnswer()
     }
     
     @IBAction func addGeoHint(_ sender: Any) {

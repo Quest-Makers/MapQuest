@@ -35,7 +35,8 @@ class Clue: NSObject {
     class func toList(clues: [Clue], forParse: Bool?) -> [NSDictionary] {
         return clues.map({ (clue) -> NSDictionary in
             return ["answer": clue.answer,
-                    "hints": Hint.toList(hints: clue.hints, forParse: forParse)]
+                    "hints": Hint.toList(hints: clue.hints, forParse: forParse!
+                )]
         })
     }
 }

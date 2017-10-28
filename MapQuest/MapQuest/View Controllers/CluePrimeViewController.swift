@@ -124,7 +124,11 @@ extension CluePrimeViewController: ClueFooterViewDelegate {
         }
         
         if !validHints {
-            // display error message
+            let alert = UIAlertController(title: "Invalid Hints",
+                                          message: "There was an error processing one of your hints, please try again.",
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         
@@ -141,15 +145,22 @@ extension CluePrimeViewController: ClueFooterViewDelegate {
     func finalClue() {
         self.delegate?.finished()
     }
+    
+    func invalidAnswer() {
+        let alert = UIAlertController(title: "Invalid Answer",
+                                      message: "You must have an answer for your clue.",
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension CluePrimeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let hint = Hint(hintType: HintType.PHOTO)
         hint.photo = info[UIImagePickerControllerOriginalImage] as! UIImage?
-        dismiss(animated: true) { () in
-            self.hints.append(hint)
-            self.tableView.reloadData()
-        }
+        self.hints.append(hint)
+        self.tableView.reloadData()
+        dismiss(animated: true, completion: nil)
     }
 }

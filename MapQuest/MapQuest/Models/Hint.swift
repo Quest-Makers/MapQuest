@@ -9,23 +9,48 @@
 import UIKit
 import Parse
 
-class Hint: PFObject, PFSubclassing {
-    static func parseClassName() -> String {
-        return "Hint"
+enum HintType {
+    case TEXT
+    case PHOTO
+    case GEOLOCATION
+    case ERROR
+}
+
+class Hint: NSObject {
+    
+    static func hintStringToHintType(hintTypeString: String) -> HintType {
+        if hintTypeString == "text" {
+            return HintType.TEXT
+        }
+        return HintType.ERROR
     }
     
-    let hintType: String!
+    static func hintTypetoHintString(hintType: HintType) -> String {
+        if hintType == HintType.TEXT {
+            return "text"
+        }
+        return "error"
+    }
+    
+    let hintType: HintType!
     let image: PFFile?
-    let text: String?
+    var text: String?
     let geo: PFGeoPoint?
+
+    init(hintType: HintType) {
+        self.hintType = hintType
+        if hintType == HintType.TEXT {
+            self.text = ""
+        }
+        self.image = nil
+        self.geo = nil
+    }
     
     init(hintType: String, imageFile: PFFile?, text: String?, geo: PFGeoPoint?) {
-
-        self.hintType = hintType
+        self.hintType = Hint.hintStringToHintType(hintTypeString: hintType)
         self.image = imageFile
         self.text = text
         self.geo = geo
-        super.init()
     }
     
     class func getPFFileFromImageData(imageData: Data?) -> PFFile? {

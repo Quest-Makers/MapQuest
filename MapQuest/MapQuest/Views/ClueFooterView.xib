@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ClueFooterView" customModule="MapQuest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lB-IE-r03">
+                    <rect key="frame" x="156.5" y="105" width="62" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jtj-P5-dqh">
+                    <rect key="frame" x="25" y="151" width="325" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-Pi-PEQ">
+                    <rect key="frame" x="15" y="25" width="75" height="30"/>
+                    <state key="normal" title="+ Text Hint"/>
+                    <connections>
+                        <action selector="addTextHint:" destination="iN0-l3-epB" eventType="touchUpInside" id="UDZ-V5-XpR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vd-zm-oeM">
+                    <rect key="frame" x="144.5" y="25" width="86" height="30"/>
+                    <state key="normal" title="+ Photo Hint"/>
+                    <connections>
+                        <action selector="addPhotoHint:" destination="iN0-l3-epB" eventType="touchUpInside" id="T32-G3-sYx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPg-1J-wQd">
+                    <rect key="frame" x="286" y="25" width="74" height="30"/>
+                    <state key="normal" title="+ Geo Hint"/>
+                    <connections>
+                        <action selector="addGeoHint:" destination="iN0-l3-epB" eventType="touchUpInside" id="5iS-Lp-W41"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-Lv-BBP">
+                    <rect key="frame" x="15" y="203" width="63" height="30"/>
+                    <state key="normal" title="Add Clue"/>
+                    <connections>
+                        <action selector="addClue:" destination="iN0-l3-epB" eventType="touchUpInside" id="Icf-RK-dwL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSo-PJ-iSR">
+                    <rect key="frame" x="308" y="203" width="52" height="30"/>
+                    <state key="normal" title="Finalize"/>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="jtj-P5-dqh" firstAttribute="top" secondItem="4lB-IE-r03" secondAttribute="bottom" constant="25" id="864-Je-jYV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JSo-PJ-iSR" secondAttribute="trailing" constant="15" id="9F5-ar-Eh6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jtj-P5-dqh" secondAttribute="trailing" constant="25" id="BSU-Yg-sTn"/>
+                <constraint firstItem="4lB-IE-r03" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CJp-fV-QVc"/>
+                <constraint firstItem="CNO-Pi-PEQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Dfo-0s-00d"/>
+                <constraint firstItem="7Vd-zm-oeM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CNO-Pi-PEQ" secondAttribute="trailing" constant="50" id="JIl-aN-QMI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wPg-1J-wQd" secondAttribute="trailing" constant="15" id="Kgt-ng-3KA"/>
+                <constraint firstItem="7Vd-zm-oeM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Npu-Od-tJX"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JSo-PJ-iSR" secondAttribute="bottom" constant="25" id="Ow7-RK-czv"/>
+                <constraint firstItem="jtj-P5-dqh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="S39-P1-LKP"/>
+                <constraint firstItem="CNO-Pi-PEQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="T8H-jt-bTc"/>
+                <constraint firstItem="4lB-IE-r03" firstAttribute="top" secondItem="7Vd-zm-oeM" secondAttribute="bottom" constant="50" id="TAF-9E-Mx1"/>
+                <constraint firstItem="wPg-1J-wQd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Vd-zm-oeM" secondAttribute="trailing" constant="50" id="UwN-uj-ZCk"/>
+                <constraint firstItem="jtj-P5-dqh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="W4c-Yf-iyZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Bb9-Lv-BBP" secondAttribute="bottom" constant="25" id="j9b-mz-KGh"/>
+                <constraint firstItem="7Vd-zm-oeM" firstAttribute="baseline" secondItem="CNO-Pi-PEQ" secondAttribute="baseline" id="jFG-l9-jV2"/>
+                <constraint firstItem="wPg-1J-wQd" firstAttribute="baseline" secondItem="CNO-Pi-PEQ" secondAttribute="baseline" id="sfU-4I-tNg"/>
+                <constraint firstItem="Bb9-Lv-BBP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="xNz-z1-1dM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="34.5" y="-150"/>
+        </view>
+    </objects>
+</document>

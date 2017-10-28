@@ -14,6 +14,11 @@
 		4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */; };
 		4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */; };
 		4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */; };
+		45CBBDB81FA16FC8007FA33B /* CluePrimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CBBDB71FA16FC8007FA33B /* CluePrimeViewController.swift */; };
+		45CBBDBA1FA17063007FA33B /* ClueFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CBBDB91FA17063007FA33B /* ClueFooterView.swift */; };
+		45CBBDBC1FA17074007FA33B /* ClueFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45CBBDBB1FA17074007FA33B /* ClueFooterView.xib */; };
+		45CBBDBF1FA1724F007FA33B /* TextClueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CBBDBD1FA1724F007FA33B /* TextClueCell.swift */; };
+		45CBBDC01FA1724F007FA33B /* TextClueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45CBBDBE1FA1724F007FA33B /* TextClueCell.xib */; };
 		45E79F2D1F92B384007AD6DE /* QuestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F2C1F92B384007AD6DE /* QuestTableViewCell.swift */; };
 		45E79F2F1F92B39F007AD6DE /* QuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F2E1F92B39F007AD6DE /* QuestListViewController.swift */; };
 		45E79F311F92B4E2007AD6DE /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F301F92B4E2007AD6DE /* Quest.swift */; };
@@ -38,6 +43,11 @@
 		4591D7701F90AFB700BD7DA5 /* BurgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerViewController.swift; sourceTree = "<group>"; };
 		4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		45CBBDB71FA16FC8007FA33B /* CluePrimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CluePrimeViewController.swift; sourceTree = "<group>"; };
+		45CBBDB91FA17063007FA33B /* ClueFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueFooterView.swift; sourceTree = "<group>"; };
+		45CBBDBB1FA17074007FA33B /* ClueFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClueFooterView.xib; sourceTree = "<group>"; };
+		45CBBDBD1FA1724F007FA33B /* TextClueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextClueCell.swift; sourceTree = "<group>"; };
+		45CBBDBE1FA1724F007FA33B /* TextClueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextClueCell.xib; sourceTree = "<group>"; };
 		45E79F2C1F92B384007AD6DE /* QuestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTableViewCell.swift; sourceTree = "<group>"; };
 		45E79F2E1F92B39F007AD6DE /* QuestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestListViewController.swift; sourceTree = "<group>"; };
 		45E79F301F92B4E2007AD6DE /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
@@ -71,6 +81,7 @@
 		4591D76A1F90AE2A00BD7DA5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				45CBBDB71FA16FC8007FA33B /* CluePrimeViewController.swift */,
 				458ECF021F92D68700C78FF1 /* QuestDetailsViewController.swift */,
 				45E79F2E1F92B39F007AD6DE /* QuestListViewController.swift */,
 				4591D7721F90AFEE00BD7DA5 /* MenuViewController.swift */,
@@ -86,8 +97,12 @@
 		4591D76B1F90AE3500BD7DA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				45CBBDB91FA17063007FA33B /* ClueFooterView.swift */,
+				45CBBDBB1FA17074007FA33B /* ClueFooterView.xib */,
 				45E79F2C1F92B384007AD6DE /* QuestTableViewCell.swift */,
 				4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */,
+				45CBBDBD1FA1724F007FA33B /* TextClueCell.swift */,
+				45CBBDBE1FA1724F007FA33B /* TextClueCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,7 +241,9 @@
 			files = (
 				CEF412DE1F8EF0FD00C482DE /* LaunchScreen.storyboard in Resources */,
 				CEF412DB1F8EF0FD00C482DE /* Assets.xcassets in Resources */,
+				45CBBDBC1FA17074007FA33B /* ClueFooterView.xib in Resources */,
 				CEF412D91F8EF0FD00C482DE /* Main.storyboard in Resources */,
+				45CBBDC01FA1724F007FA33B /* TextClueCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +318,17 @@
 				4591D7711F90AFB800BD7DA5 /* BurgerViewController.swift in Sources */,
 				D06F29AD1F9414CF0076C85B /* PlayClueViewController.swift in Sources */,
 				458ECF051F92E86800C78FF1 /* CreateQuestViewController.swift in Sources */,
+				45CBBDBA1FA17063007FA33B /* ClueFooterView.swift in Sources */,
 				45E79F341F92B555007AD6DE /* MapQuestClient.swift in Sources */,
 				457FB6371F93141F00AFE609 /* NewClueViewController.swift in Sources */,
 				45E79F2D1F92B384007AD6DE /* QuestTableViewCell.swift in Sources */,
 				45E79F311F92B4E2007AD6DE /* Quest.swift in Sources */,
+				45CBBDBF1FA1724F007FA33B /* TextClueCell.swift in Sources */,
 				4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */,
 				D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */,
 				45E79F2F1F92B39F007AD6DE /* QuestListViewController.swift in Sources */,
 				458ECF031F92D68700C78FF1 /* QuestDetailsViewController.swift in Sources */,
+				45CBBDB81FA16FC8007FA33B /* CluePrimeViewController.swift in Sources */,
 				457FB6351F93126300AFE609 /* Clue.swift in Sources */,
 				CEF412D41F8EF0FD00C482DE /* AppDelegate.swift in Sources */,
 				4591D7731F90AFEE00BD7DA5 /* MenuViewController.swift in Sources */,

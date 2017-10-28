@@ -29,6 +29,7 @@ class NewClueViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func addNewClue(_ sender: Any) {
         wasAdded = true
         var hintImageFile: PFFile?
+        
         if self.hintImage != nil {
             var imageData = UIImagePNGRepresentation(self.hintImage!)
             hintImageFile = Hint.getPFFileFromImageData(imageData: imageData)

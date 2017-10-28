@@ -22,6 +22,9 @@ class Hint: NSObject {
         if hintTypeString == "text" {
             return HintType.TEXT
         }
+        else if hintTypeString == "photo" {
+            return HintType.PHOTO
+        }
         return HintType.ERROR
     }
     
@@ -29,19 +32,22 @@ class Hint: NSObject {
         if hintType == HintType.TEXT {
             return "text"
         }
+        else if hintType == HintType.PHOTO {
+            return "photo"
+        }
         return "error"
     }
     
     let hintType: HintType!
     let image: PFFile?
+    var photo: UIImage?
     var text: String?
     let geo: PFGeoPoint?
 
     init(hintType: HintType) {
         self.hintType = hintType
-        if hintType == HintType.TEXT {
-            self.text = ""
-        }
+        self.text = ""
+        self.photo = nil
         self.image = nil
         self.geo = nil
     }
@@ -51,6 +57,7 @@ class Hint: NSObject {
         self.image = imageFile
         self.text = text
         self.geo = geo
+        self.photo = nil
     }
     
     func isValid() -> Bool {
@@ -59,6 +66,12 @@ class Hint: NSObject {
                 if text != "" {
                     return true
                 }
+            }
+        }
+
+        if self.hintType == HintType.PHOTO {
+            if self.photo != nil {
+                return true
             }
         }
         return false
@@ -94,10 +107,22 @@ class Hint: NSObject {
     
     }
     
-    class func toList(hints: [Hint], forParse: Bool?) -> [NSDictionary] {
+    class func toList(hints: [Hint], forParse: Bool) -> [NSDictionary] {
         return hints.map({ (hint) -> NSDictionary in
+            if !forParse {
+                return ["hintType": hintTypetoHintString(hintType: hint.hintType),
+                        "text": hint.text! as Any]
+            }
+            if hint.hintType == HintType.TEXT {
+                return ["hintType": hintTypetoHintString(hintType: hint.hintType),
+                        "text": hint.text! as Any]
+            }
+            else if hint.hintType == HintType.PHOTO {
+                return ["hintType": hintTypetoHintString(hintType: hint.hintType),
+                        "photo": PFFile(data: UIImageJPEGRepresentation(hint.photo!, 1.0)!) as Any]
+            }
             return ["hintType": hintTypetoHintString(hintType: hint.hintType),
-                    "text": hint.text]
+                    "text": hint.text! as Any]
         })
     }
     

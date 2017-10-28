@@ -9,8 +9,10 @@
 import UIKit
 
 protocol ClueFooterViewDelegate {
-    func addHint(hintType: HintType)
+    func addTextHint()
+    func addPhotoHint()
     func addClue(answerText: String)
+    func invalidAnswer()
     func finalClue()
 }
 
@@ -36,17 +38,18 @@ class ClueFooterView: UIView {
                 return
             }
         }
-        // error out, can't have empty answer text
+        delegate?.invalidAnswer()
     }
     
     @IBAction func addGeoHint(_ sender: Any) {
     }
     
     @IBAction func addPhotoHint(_ sender: Any) {
+        self.delegate?.addPhotoHint()
     }
     
     @IBAction func addTextHint(_ sender: Any) {
-        self.delegate?.addHint(hintType: HintType.TEXT)
+        self.delegate?.addTextHint()
     }
     /*
     // Only override draw() if you perform custom drawing.

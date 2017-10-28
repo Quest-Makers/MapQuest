@@ -42,6 +42,7 @@ class CluePrimeViewController: UIViewController {
         tableView.tableFooterView = footerView
         
         tableView.mapQuestRegisterNib(cellClass: TextClueCell.self)
+        tableView.mapQuestRegisterNib(cellClass: PhotoHintTableViewCell.self)
         tableView.dataSource = self
         
         tableView.estimatedRowHeight = 250
@@ -70,7 +71,9 @@ extension CluePrimeViewController: UITableViewDataSource {
         }
         
         if hint.hintType == HintType.PHOTO {
-            print("photo hint addded!!!!")
+            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: PhotoHintTableViewCell.self) as! PhotoHintTableViewCell
+            cell.hint = hint
+            return cell
         }
         
         return UITableViewCell()

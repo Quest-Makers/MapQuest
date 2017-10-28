@@ -9,7 +9,8 @@
 import UIKit
 
 protocol ClueFooterViewDelegate {
-    func addHint(hintType: HintType)
+    func addTextHint()
+    func addPhotoHint()
     func addClue(answerText: String)
     func finalClue()
 }
@@ -43,10 +44,11 @@ class ClueFooterView: UIView {
     }
     
     @IBAction func addPhotoHint(_ sender: Any) {
+        self.delegate?.addPhotoHint()
     }
     
     @IBAction func addTextHint(_ sender: Any) {
-        self.delegate?.addHint(hintType: HintType.TEXT)
+        self.delegate?.addTextHint()
     }
     /*
     // Only override draw() if you perform custom drawing.

@@ -34,6 +34,7 @@ class Hint: NSObject {
     
     let hintType: HintType!
     let image: PFFile?
+    var photo: UIImage?
     var text: String?
     let geo: PFGeoPoint?
 
@@ -42,6 +43,7 @@ class Hint: NSObject {
         if hintType == HintType.TEXT {
             self.text = ""
         }
+        self.photo = nil
         self.image = nil
         self.geo = nil
     }
@@ -51,6 +53,7 @@ class Hint: NSObject {
         self.image = imageFile
         self.text = text
         self.geo = geo
+        self.photo = nil
     }
     
     func isValid() -> Bool {

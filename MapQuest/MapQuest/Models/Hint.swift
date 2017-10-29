@@ -78,6 +78,13 @@ class Hint: NSObject {
                 return true
             }
         }
+        
+        if self.hintType == HintType.GEOLOCATION {
+            if self.geoLocation != nil {
+                return true
+            }
+        }
+        
         return false
     }
     

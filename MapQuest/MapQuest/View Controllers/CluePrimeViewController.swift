@@ -44,6 +44,7 @@ class CluePrimeViewController: UIViewController {
         
         tableView.mapQuestRegisterNib(cellClass: TextClueCell.self)
         tableView.mapQuestRegisterNib(cellClass: PhotoHintTableViewCell.self)
+        tableView.mapQuestRegisterNib(cellClass: GeoLocationTableViewCell.self)
         tableView.dataSource = self
         
         tableView.estimatedRowHeight = 250
@@ -81,6 +82,12 @@ extension CluePrimeViewController: UITableViewDataSource {
         
         if hint.hintType == HintType.PHOTO {
             let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: PhotoHintTableViewCell.self) as! PhotoHintTableViewCell
+            cell.hint = hint
+            return cell
+        }
+        
+        if hint.hintType == HintType.GEOLOCATION {
+            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: GeoLocationTableViewCell.self) as! GeoLocationTableViewCell
             cell.hint = hint
             return cell
         }

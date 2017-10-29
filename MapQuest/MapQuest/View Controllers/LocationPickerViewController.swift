@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol LocationPickerViewControllerDelegate {
-    func addGeoLocationHint(sender: LocationPickerViewController, geoHintCoordinate: CLLocationCoordinate2D)
+    func addGeoLocationHint(sender: LocationPickerViewController,geoHintCoordinate: CLLocationCoordinate2D)
 }
 
 

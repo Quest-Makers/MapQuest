@@ -14,6 +14,7 @@ class PlayClueViewController: UIViewController {
     
     var delegate: QuestDetailsViewController? = nil
     var clueProgress: Int = 0
+    var hints: [Hint]? = []
 
     @IBOutlet weak var clueText: UILabel!
     @IBOutlet weak var answerInput: UITextField!
@@ -21,6 +22,7 @@ class PlayClueViewController: UIViewController {
     @IBOutlet weak var latLabel: UILabel!
     @IBOutlet weak var lonLabel: UILabel!
     @IBOutlet weak var solveButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBAction func solveClue(_ sender: Any) {
         print("input:")
@@ -47,21 +49,36 @@ class PlayClueViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.mapQuestRegisterNib(cellClass: TextClueCell.self)
+        tableView.mapQuestRegisterNib(cellClass: PhotoHintTableViewCell.self)
+        tableView.mapQuestRegisterNib(cellClass: GeoLocationTableViewCell.self)
+        tableView.dataSource = self
+        
+        tableView.estimatedRowHeight = 250
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        setupViewResizerOnKeyboardShown()
+        tableView.reloadData()
+        
+        
         //clueText.text = self.delegate?.quest.clues[clueProgress].hint
-        var hints = self.delegate?.quest.clues[self.clueProgress].hints
+        hints = self.delegate?.quest.clues[self.clueProgress].hints
+        var clues = self.delegate?.quest.clues
         print("correct answer:")
         print(self.delegate?.quest.clues[clueProgress].answer)
         if clueProgress + 1 >= (self.delegate?.quest.clues.count)! {
             solveButton.isHidden = true
             answerInput.isHidden = true
         }
-        if clueProgress <= hints!.count {
-            self.photoView.file = self.delegate?.quest.clues[self.clueProgress].hints[1].image as? PFFile
-            self.photoView.loadInBackground()
-            if let geo = hints![2].geo {
-                lonLabel.text = "\(geo.longitude)"
-                latLabel.text = "\(geo.latitude)"
-            }
+        if clueProgress <= clues!.count {
+            
+//            self.photoView.file = self.delegate?.quest.clues[self.clueProgress].hints[1].image as? PFFile
+//            self.photoView.loadInBackground()
+//            if let geo = hints![2].geo {
+//                lonLabel.text = "\(geo.longitude)"
+//                latLabel.text = "\(geo.latitude)"
+//            }
         }
         
         
@@ -85,4 +102,34 @@ class PlayClueViewController: UIViewController {
     }
     */
 
+}
+
+extension PlayClueViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let hint = hints?[indexPath.row]
+        
+        if hint?.hintType == HintType.TEXT {
+            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: TextClueCell.self) as! TextClueCell
+            cell.hint = hint
+            return cell
+        }
+        
+        if hint?.hintType == HintType.PHOTO {
+            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: PhotoHintTableViewCell.self) as! PhotoHintTableViewCell
+            cell.hint = hint
+            return cell
+        }
+        
+        if hint?.hintType == HintType.GEOLOCATION {
+            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: GeoLocationTableViewCell.self) as! GeoLocationTableViewCell
+            cell.hint = hint
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (hints?.count)!
+    }
 }

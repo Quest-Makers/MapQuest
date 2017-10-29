@@ -109,14 +109,21 @@ extension PlayClueViewController: UITableViewDataSource {
         let hint = hints?[indexPath.row]
         
         if hint?.hintType == HintType.TEXT {
-            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: TextClueCell.self) as! TextClueCell
-            cell.hint = hint
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "playCell", for: indexPath) as! PlayClueCell
+            cell.clueLabel.text = "asd"
+            
+//            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: TextClueCell.self) as! TextClueCell
+//            cell.hint = hint
             return cell
         }
         
         if hint?.hintType == HintType.PHOTO {
-            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: PhotoHintTableViewCell.self) as! PhotoHintTableViewCell
-            cell.hint = hint
+            let cell = tableView.dequeueReusableCell(withIdentifier: "playCell", for: indexPath) as! PlayClueCell
+            cell.clueImage.image = (hint?.photo)!
+            
+//            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: PhotoHintTableViewCell.self) as! PhotoHintTableViewCell
+//            cell.hint = hint
             return cell
         }
         

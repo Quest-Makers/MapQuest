@@ -33,6 +33,7 @@
 		CEF412DE1F8EF0FD00C482DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412DC1F8EF0FD00C482DE /* LaunchScreen.storyboard */; };
 		D06F29AD1F9414CF0076C85B /* PlayClueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F29AC1F9414CF0076C85B /* PlayClueViewController.swift */; };
 		D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074D8331F906F3D00B660C4 /* ScreenStage.swift */; };
+		D078A3031FA5B9B00083FB2D /* PlayClueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078A3021FA5B9B00083FB2D /* PlayClueCell.swift */; };
 		D07DE5C11F99A15100C1CE71 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DE5C01F99A15100C1CE71 /* Hint.swift */; };
 		D0FC2D781F9D24D90082D772 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC2D771F9D24D90082D772 /* LocationPickerViewController.swift */; };
 		E100F71BBC22E4A2792EABED /* Pods_MapQuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229864BDA1D58B39AA8AAC25 /* Pods_MapQuest.framework */; };
@@ -70,6 +71,7 @@
 		CEF412DF1F8EF0FD00C482DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D06F29AC1F9414CF0076C85B /* PlayClueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayClueViewController.swift; sourceTree = "<group>"; };
 		D074D8331F906F3D00B660C4 /* ScreenStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStage.swift; sourceTree = "<group>"; };
+		D078A3021FA5B9B00083FB2D /* PlayClueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayClueCell.swift; sourceTree = "<group>"; };
 		D07DE5C01F99A15100C1CE71 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 		D0FC2D771F9D24D90082D772 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 				4591D7741F90B44700BD7DA5 /* MenuItemTableViewCell.swift */,
 				45CBBDBD1FA1724F007FA33B /* TextClueCell.swift */,
 				45CBBDBE1FA1724F007FA33B /* TextClueCell.xib */,
+				D078A3021FA5B9B00083FB2D /* PlayClueCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				45CBBDBF1FA1724F007FA33B /* TextClueCell.swift in Sources */,
 				4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */,
 				D074D8341F906F3D00B660C4 /* ScreenStage.swift in Sources */,
+				D078A3031FA5B9B00083FB2D /* PlayClueCell.swift in Sources */,
 				45E79F2F1F92B39F007AD6DE /* QuestListViewController.swift in Sources */,
 				458ECF031F92D68700C78FF1 /* QuestDetailsViewController.swift in Sources */,
 				45CBBDB81FA16FC8007FA33B /* CluePrimeViewController.swift in Sources */,

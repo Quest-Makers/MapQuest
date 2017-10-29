@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fi3-mU-nPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="-101"/>
+            <point key="canvasLocation" x="-378" y="-845"/>
         </scene>
         <!--Quest List View Controller-->
         <scene sceneID="q4y-tR-gNa">
@@ -494,33 +494,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="set location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="po8-B2-gDm">
-                                <rect key="frame" x="166" y="134" width="89" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9x-2M-d9s">
-                                <rect key="frame" x="195" y="365" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Set"/>
-                                <connections>
-                                    <action selector="setLocationTap:" destination="5zU-Z1-QaY" eventType="touchUpInside" id="Y5B-HY-DMQ"/>
-                                </connections>
-                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bDp-CD-VEY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLv-HJ-p2n">
+                                <rect key="frame" x="194" y="606" width="156" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Use This Location"/>
+                                <connections>
+                                    <action selector="addGeoLocationHint:" destination="5zU-Z1-QaY" eventType="touchUpInside" id="mVy-BT-keg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rTY-tV-Pxg" firstAttribute="trailing" secondItem="DLv-HJ-p2n" secondAttribute="trailing" constant="25" id="6om-lb-8ng"/>
+                            <constraint firstItem="rTY-tV-Pxg" firstAttribute="bottom" secondItem="DLv-HJ-p2n" secondAttribute="bottom" constant="25" id="QZ4-F4-gg2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rTY-tV-Pxg"/>
                     </view>
+                    <connections>
+                        <outlet property="mappy" destination="bDp-CD-VEY" id="8Me-LD-BMK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASY-G6-K2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="802"/>
+            <point key="canvasLocation" x="1269.5999999999999" y="874.81259370314854"/>
         </scene>
         <!--Clue Prime View Controller-->
         <scene sceneID="8Kf-5b-3Oe">
@@ -546,11 +547,12 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="mYj-wL-Gke" id="Vqd-Pd-aDy"/>
+                        <segue destination="5zU-Z1-QaY" kind="presentation" identifier="addGeoLocationSegue" id="ITE-HQ-RBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUe-As-o2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="628"/>
+            <point key="canvasLocation" x="1270" y="118"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rQw-t3-6PM">

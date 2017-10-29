@@ -8,6 +8,7 @@
 
 import UIKit
 import SDCAlertView
+import MapKit
 
 extension UITableView {
     func mapQuestRegisterNib(cellClass: AnyClass) {
@@ -43,6 +44,7 @@ class CluePrimeViewController: UIViewController {
         
         tableView.mapQuestRegisterNib(cellClass: TextClueCell.self)
         tableView.mapQuestRegisterNib(cellClass: PhotoHintTableViewCell.self)
+        tableView.mapQuestRegisterNib(cellClass: GeoLocationTableViewCell.self)
         tableView.dataSource = self
         
         tableView.estimatedRowHeight = 250
@@ -56,6 +58,14 @@ class CluePrimeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let identifier = segue.identifier as String! ?? ""
+        if identifier == "addGeoLocationSegue" {
+            let destination = segue.destination as! LocationPickerViewController
+            destination.delegate = self
+        }
     }
 
 }
@@ -72,6 +82,12 @@ extension CluePrimeViewController: UITableViewDataSource {
         
         if hint.hintType == HintType.PHOTO {
             let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: PhotoHintTableViewCell.self) as! PhotoHintTableViewCell
+            cell.hint = hint
+            return cell
+        }
+        
+        if hint.hintType == HintType.GEOLOCATION {
+            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: GeoLocationTableViewCell.self) as! GeoLocationTableViewCell
             cell.hint = hint
             return cell
         }
@@ -118,6 +134,10 @@ extension CluePrimeViewController: ClueFooterViewDelegate {
         alert.present()
     }
     
+    func addGeoHint() {
+        self.performSegue(withIdentifier: "addGeoLocationSegue", sender: nil)
+    }
+    
     func addClue(answerText: String) {
         let validHints = hints.reduce(true) { (isValid, hint) -> Bool in
             return isValid && hint.isValid()
@@ -162,5 +182,15 @@ extension CluePrimeViewController: UIImagePickerControllerDelegate, UINavigation
         self.hints.append(hint)
         self.tableView.reloadData()
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CluePrimeViewController: LocationPickerViewControllerDelegate {
+    func addGeoLocationHint(sender: LocationPickerViewController, geoHintCoordinate: CLLocationCoordinate2D) {
+        let hint = Hint(hintType: HintType.GEOLOCATION)
+        hint.geoLocation = geoHintCoordinate
+        self.hints.append(hint)
+        self.tableView.reloadData()
+        sender.dismiss(animated: true, completion: nil)
     }
 }

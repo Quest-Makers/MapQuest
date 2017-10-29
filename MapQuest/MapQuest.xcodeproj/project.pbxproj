@@ -19,6 +19,8 @@
 		45CBBDBC1FA17074007FA33B /* ClueFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45CBBDBB1FA17074007FA33B /* ClueFooterView.xib */; };
 		45CBBDBF1FA1724F007FA33B /* TextClueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CBBDBD1FA1724F007FA33B /* TextClueCell.swift */; };
 		45CBBDC01FA1724F007FA33B /* TextClueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45CBBDBE1FA1724F007FA33B /* TextClueCell.xib */; };
+		45DA73871FA5621F009F3D4F /* GeoLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA73851FA5621F009F3D4F /* GeoLocationTableViewCell.swift */; };
+		45DA73881FA5621F009F3D4F /* GeoLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45DA73861FA5621F009F3D4F /* GeoLocationTableViewCell.xib */; };
 		45DC48461FA53D3A005A0AF5 /* PhotoHintTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC48441FA53D3A005A0AF5 /* PhotoHintTableViewCell.swift */; };
 		45DC48471FA53D3A005A0AF5 /* PhotoHintTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45DC48451FA53D3A005A0AF5 /* PhotoHintTableViewCell.xib */; };
 		45E79F2D1F92B384007AD6DE /* QuestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F2C1F92B384007AD6DE /* QuestTableViewCell.swift */; };
@@ -50,6 +52,8 @@
 		45CBBDBB1FA17074007FA33B /* ClueFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClueFooterView.xib; sourceTree = "<group>"; };
 		45CBBDBD1FA1724F007FA33B /* TextClueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextClueCell.swift; sourceTree = "<group>"; };
 		45CBBDBE1FA1724F007FA33B /* TextClueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextClueCell.xib; sourceTree = "<group>"; };
+		45DA73851FA5621F009F3D4F /* GeoLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationTableViewCell.swift; sourceTree = "<group>"; };
+		45DA73861FA5621F009F3D4F /* GeoLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeoLocationTableViewCell.xib; sourceTree = "<group>"; };
 		45DC48441FA53D3A005A0AF5 /* PhotoHintTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHintTableViewCell.swift; sourceTree = "<group>"; };
 		45DC48451FA53D3A005A0AF5 /* PhotoHintTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoHintTableViewCell.xib; sourceTree = "<group>"; };
 		45E79F2C1F92B384007AD6DE /* QuestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTableViewCell.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 		4591D76B1F90AE3500BD7DA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				45DA73851FA5621F009F3D4F /* GeoLocationTableViewCell.swift */,
+				45DA73861FA5621F009F3D4F /* GeoLocationTableViewCell.xib */,
 				45DC48441FA53D3A005A0AF5 /* PhotoHintTableViewCell.swift */,
 				45DC48451FA53D3A005A0AF5 /* PhotoHintTableViewCell.xib */,
 				45CBBDB91FA17063007FA33B /* ClueFooterView.swift */,
@@ -251,6 +257,7 @@
 				CEF412D91F8EF0FD00C482DE /* Main.storyboard in Resources */,
 				45CBBDC01FA1724F007FA33B /* TextClueCell.xib in Resources */,
 				45DC48471FA53D3A005A0AF5 /* PhotoHintTableViewCell.xib in Resources */,
+				45DA73881FA5621F009F3D4F /* GeoLocationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +337,7 @@
 				457FB6371F93141F00AFE609 /* NewClueViewController.swift in Sources */,
 				45DC48461FA53D3A005A0AF5 /* PhotoHintTableViewCell.swift in Sources */,
 				45E79F2D1F92B384007AD6DE /* QuestTableViewCell.swift in Sources */,
+				45DA73871FA5621F009F3D4F /* GeoLocationTableViewCell.swift in Sources */,
 				45E79F311F92B4E2007AD6DE /* Quest.swift in Sources */,
 				45CBBDBF1FA1724F007FA33B /* TextClueCell.swift in Sources */,
 				4591D7751F90B44700BD7DA5 /* MenuItemTableViewCell.swift in Sources */,

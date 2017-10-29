@@ -61,7 +61,7 @@ class MapQuestClient: NSObject {
         let localQuestNames = userDefaults.object(forKey: "quests") as? [String] ?? [String]()
         
         let quests = localQuestNames.map { (questName: String) -> Quest in
-            return Quest(questDict: userDefaults.object(forKey: questName) as! NSDictionary)
+            return Quest(questDict: userDefaults.object(forKey: questName) as? NSDictionary ?? [String:Any]() as NSDictionary)
         }
 
         return completion(quests)

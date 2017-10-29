@@ -152,7 +152,7 @@ class Hint: NSObject {
             if hintType == HintType.GEOLOCATION {
                 let geoLocationCoordinates = hintDict["geoLocation"] as! NSDictionary
                 let longitude = geoLocationCoordinates["longitude"] as! CLLocationDegrees
-                let latitude = geoLocationCoordinates["latitude"] as CLLocationDegrees
+                let latitude = geoLocationCoordinates["latitude"] as! CLLocationDegrees
                 
                 let hint = Hint(hintType: hintType)
                 hint.geoLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)

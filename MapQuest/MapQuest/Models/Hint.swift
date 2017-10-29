@@ -25,6 +25,10 @@ class Hint: NSObject {
         else if hintTypeString == "photo" {
             return HintType.PHOTO
         }
+        else if hintTypeString == "geoLocation" {
+            return HintType.GEOLOCATION
+        }
+        
         return HintType.ERROR
     }
     
@@ -34,6 +38,9 @@ class Hint: NSObject {
         }
         else if hintType == HintType.PHOTO {
             return "photo"
+        }
+        else if hintType == HintType.GEOLOCATION {
+            return "geoLocation"
         }
         return "error"
     }
@@ -88,36 +95,7 @@ class Hint: NSObject {
         return false
     }
     
-    class func getPFFileFromImageData(imageData: Data?) -> PFFile? {
 
-        if let imageData = imageData {
-            return PFFile(name: "image.png", data: imageData)
-        }
-        return nil
-    }
-    
-    class func formatImageData(imageFile: PFFile?, forParse: Bool?, hint: Hint) -> Any? {
-
-        if forParse! {
-            return imageFile
-
-        }
-        else {
-
-            return "just a string"
-        }
-    }
-    
-    class func formatGeo(geo: PFGeoPoint?, forParse: Bool) -> Any? {
-        if forParse {
-            return geo
-        }
-        else {
-            return "geostring"
-        }
-    
-    }
-    
     class func toList(hints: [Hint], forParse: Bool) -> [NSDictionary] {
         return hints.map({ (hint) -> NSDictionary in
             if !forParse {
@@ -171,11 +149,49 @@ class Hint: NSObject {
                 return hint
             }
             
-            return Hint(hintType: HintType.ERROR)
+            if hintType == HintType.GEOLOCATION {
+                let geoLocationCoordinates = hintDict["geoLocation"] as! NSDictionary
+                let longitude = geoLocationCoordinates["longitude"] as! CLLocationDegrees
+                let latitude = geoLocationCoordinates["latitude"] as CLLocationDegrees
+                
+                let hint = Hint(hintType: hintType)
+                hint.geoLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                return hint
+            }
             
-            //let hintText = hintDict["text"] as! String
-            //return Hint(hintType: hintType, imageFile: nil, text: hintText, geo: nil)
+            return Hint(hintType: HintType.ERROR)
         })
     }
+    
+    class func getPFFileFromImageData(imageData: Data?) -> PFFile? {
+        
+        if let imageData = imageData {
+            return PFFile(name: "image.png", data: imageData)
+        }
+        return nil
+    }
+    
+    class func formatImageData(imageFile: PFFile?, forParse: Bool?, hint: Hint) -> Any? {
+        
+        if forParse! {
+            return imageFile
+            
+        }
+        else {
+            
+            return "just a string"
+        }
+    }
+    
+    class func formatGeo(geo: PFGeoPoint?, forParse: Bool) -> Any? {
+        if forParse {
+            return geo
+        }
+        else {
+            return "geostring"
+        }
+        
+    }
+    
     
 }

@@ -25,10 +25,10 @@ class ClueFooterView: UIView {
     
     @IBAction func finalize(_ sender: Any) {
         if let text = answerTextField.text as String! {
-            if text != "" {
+//            if text != "" {
                 self.delegate?.addClue(answerText: text)
                 self.delegate?.finalClue()
-            }
+//            }
         }
     }
     

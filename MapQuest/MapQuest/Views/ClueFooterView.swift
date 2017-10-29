@@ -11,6 +11,7 @@ import UIKit
 protocol ClueFooterViewDelegate {
     func addTextHint()
     func addPhotoHint()
+    func addGeoHint()
     func addClue(answerText: String)
     func invalidAnswer()
     func finalClue()
@@ -42,6 +43,7 @@ class ClueFooterView: UIView {
     }
     
     @IBAction func addGeoHint(_ sender: Any) {
+        self.delegate?.addGeoHint()
     }
     
     @IBAction func addPhotoHint(_ sender: Any) {

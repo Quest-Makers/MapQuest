@@ -38,12 +38,15 @@ class Hint: NSObject {
         return "error"
     }
     
-    let hintType: HintType!
+
     let image: PFFile?
-    var photo: UIImage?
-    var text: String?
     let geo: PFGeoPoint?
 
+    let hintType: HintType!
+    var text: String?
+    var photo: UIImage?
+    var geoLocation: CLLocationCoordinate2D?
+    
     init(hintType: HintType) {
         self.hintType = hintType
         self.text = ""
@@ -58,6 +61,7 @@ class Hint: NSObject {
         self.text = text
         self.geo = geo
         self.photo = nil
+        self.geoLocation = nil
     }
     
     func isValid() -> Bool {
@@ -121,6 +125,12 @@ class Hint: NSObject {
                 return ["hintType": hintTypetoHintString(hintType: hint.hintType),
                         "photo": PFFile(data: UIImageJPEGRepresentation(hint.photo!, 1.0)!) as Any]
             }
+            else if hint.hintType == HintType.GEOLOCATION {
+                return ["hintType": hintTypetoHintString(hintType: hint.hintType),
+                        "geoLocation": ["latitude": hint.geoLocation!.latitude,
+                                        "longitude": hint.geoLocation!.longitude] as Any]
+            }
+            
             return ["hintType": hintTypetoHintString(hintType: hint.hintType),
                     "text": hint.text! as Any]
         })
@@ -128,9 +138,36 @@ class Hint: NSObject {
     
     class func fromList(hintDicts: [NSDictionary]) -> [Hint] {
         return hintDicts.map({ (hintDict) -> Hint in
-            let hintType = hintDict["hintType"] as! String
-            let hintText = hintDict["text"] as! String
-            return Hint(hintType: hintType, imageFile: nil, text: hintText, geo: nil)
+            let hintTypeString = hintDict["hintType"] as! String
+            
+            let hintType = hintStringToHintType(hintTypeString: hintTypeString)
+            
+            if hintType == HintType.TEXT {
+                let text = hintDict["text"] as? String ?? ""
+                let hint = Hint(hintType: hintType)
+                hint.text = text
+                return hint
+            }
+            
+            if hintType == HintType.PHOTO {
+                let photoPFFile = hintDict["photo"] as? PFFile ?? nil
+                if photoPFFile == nil {
+                    return Hint(hintType: HintType.ERROR)
+                }
+                let hint =  Hint(hintType: hintType)
+                photoPFFile!.getDataInBackground(block: { (photoData, error) in
+                    if error == nil {
+                        let photo = UIImage(data: photoData!)
+                        hint.photo = photo
+                    }
+                })
+                return hint
+            }
+            
+            return Hint(hintType: HintType.ERROR)
+            
+            //let hintText = hintDict["text"] as! String
+            //return Hint(hintType: hintType, imageFile: nil, text: hintText, geo: nil)
         })
     }
     

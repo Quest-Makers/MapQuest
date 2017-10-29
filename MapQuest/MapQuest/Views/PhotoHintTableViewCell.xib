@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,7 +35,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="photoHeight" destination="ODg-1o-HCk" id="1va-ad-gqb"/>
                 <outlet property="photoHintImageView" destination="Glz-bX-d5T" id="p2F-5p-Nmy"/>
+                <outlet property="photoWidth" destination="hop-Tz-1CY" id="1FW-dD-5FN"/>
             </connections>
             <point key="canvasLocation" x="86.5" y="122"/>
         </tableViewCell>

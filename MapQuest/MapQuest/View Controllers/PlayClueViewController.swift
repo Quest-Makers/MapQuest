@@ -9,8 +9,12 @@
 import UIKit
 import Parse
 import ParseUI
+import DCExplosion
 
-class PlayClueViewController: UIViewController {
+extension UIView:Explodable { }
+
+
+class PlayClueViewController: UIViewController, Explodable {
     
     var delegate: QuestDetailsViewController? = nil
     var clueProgress: Int = 0
@@ -38,7 +42,9 @@ class PlayClueViewController: UIViewController {
             let playClueViewController = mainStoryboard.instantiateViewController(withIdentifier: "PlayClueViewController") as! PlayClueViewController
             playClueViewController.delegate = self.delegate
             playClueViewController.clueProgress = self.clueProgress + 1
-            self.navigationController?.pushViewController(playClueViewController, animated: true)
+            self.view.explode(duration: 1.5) {
+                self.navigationController?.pushViewController(playClueViewController, animated: false)
+                }
         }
         else {
             let alert = UIAlertController(title: "Wrong", message: "Try again", preferredStyle: UIAlertControllerStyle.alert)
@@ -140,3 +146,5 @@ extension PlayClueViewController: UITableViewDataSource {
         return (hints?.count)!
     }
 }
+
+

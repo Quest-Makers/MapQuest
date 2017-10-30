@@ -7,6 +7,7 @@ target 'MapQuest' do
 	pod 'Parse'
   pod 'SDCAlertView', '~> 8.0'
 	pod 'ParseUI'
+  pod 'DCExplosion'
   # Pods for MapQuest
 
 end

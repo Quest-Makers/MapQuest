@@ -40,6 +40,7 @@ class QuestListViewController: UIViewController {
         
         questListTableView.estimatedRowHeight = 250
         questListTableView.rowHeight = UITableViewAutomaticDimension
+        questListTableView.backgroundView = UIImageView(image: UIImage(named: "grad.jpg"))
 
     }
 
@@ -64,6 +65,7 @@ extension QuestListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuestListCell") as! QuestTableViewCell
         cell.quest = quests[indexPath.row]
+        cell.backgroundColor = .clear
         return cell
     }
     

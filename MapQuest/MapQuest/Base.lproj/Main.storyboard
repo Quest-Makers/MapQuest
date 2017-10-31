@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass" translatesAutoresizingMaskIntoConstraints="NO" id="um0-tO-UG7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map Quest-3" translatesAutoresizingMaskIntoConstraints="NO" id="um0-tO-UG7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title: Give your Quest a name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFk-oM-hdx">
@@ -192,7 +192,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestListCell" rowHeight="95" id="hQw-en-3Rr" customClass="QuestTableViewCell" customModule="MapQuest" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" alpha="0.84999999999999998" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestListCell" rowHeight="95" id="hQw-en-3Rr" customClass="QuestTableViewCell" customModule="MapQuest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hQw-en-3Rr" id="ES7-zi-B9L">
@@ -200,8 +200,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quest Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-tU-Aha">
-                                                    <rect key="frame" x="10" y="25" width="95.5" height="44.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="10" y="25" width="100.5" height="44.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.076890382124352286" green="0.076890382124352286" blue="0.076890382124352286" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -213,6 +213,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="rUG-tU-Aha" secondAttribute="bottom" constant="25" id="qvY-Re-fzl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="questNameLabel" destination="rUG-tU-Aha" id="rgz-9D-h1j"/>
                                             <segue destination="HKf-GF-ARj" kind="show" id="A99-8R-7D1"/>
@@ -247,55 +248,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road" translatesAutoresizingMaskIntoConstraints="NO" id="ScK-So-Z7E">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map Quest-2" translatesAutoresizingMaskIntoConstraints="NO" id="ScK-So-Z7E">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Quest Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdv-xA-oR7">
-                                <rect key="frame" x="107" y="114" width="161" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" fixedFrame="YES" text="Quest Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdv-xA-oR7">
+                                <rect key="frame" x="107" y="149" width="161" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ao-Hc-lJM">
-                                <rect key="frame" x="136" y="165" width="103" height="131"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CW2-QP-p6i">
-                                <rect key="frame" x="136" y="321" width="104.5" height="25.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CW2-QP-p6i">
+                                <rect key="frame" x="136" y="363" width="104.5" height="25.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BY-xv-Pch">
-                                <rect key="frame" x="121" y="572" width="132" height="45"/>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BY-xv-Pch">
+                                <rect key="frame" x="122" y="507" width="132" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Start Quest"/>
+                                <state key="normal" title="Start Quest">
+                                    <color key="titleColor" red="0.43550749027969199" green="0.0045746837819415657" blue="0.71283034154170544" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="VeO-nl-oyN" kind="show" id="DOa-nU-Ytn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current State" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ao-Hc-lJM">
+                                <rect key="frame" x="136" y="247" width="103" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8Ao-Hc-lJM" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="0Nh-lZ-Trg"/>
-                            <constraint firstItem="CW2-QP-p6i" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="3PH-jo-AbH"/>
-                            <constraint firstAttribute="trailing" secondItem="ScK-So-Z7E" secondAttribute="trailing" constant="-18" id="4A4-Pd-PfJ"/>
-                            <constraint firstItem="CW2-QP-p6i" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H8e-oQ-7GU" secondAttribute="leading" id="5zW-vb-hvP"/>
-                            <constraint firstItem="8Ao-Hc-lJM" firstAttribute="top" secondItem="gdv-xA-oR7" secondAttribute="bottom" constant="15" id="JW1-8R-naz"/>
-                            <constraint firstItem="ScK-So-Z7E" firstAttribute="leading" secondItem="eb2-sl-14c" secondAttribute="leading" id="PHM-Zc-TzR"/>
-                            <constraint firstItem="ScK-So-Z7E" firstAttribute="top" secondItem="eb2-sl-14c" secondAttribute="top" id="U9G-Ew-UPH"/>
-                            <constraint firstItem="6BY-xv-Pch" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CW2-QP-p6i" secondAttribute="bottom" constant="5" id="a1U-Ms-gsZ"/>
-                            <constraint firstItem="CW2-QP-p6i" firstAttribute="centerY" secondItem="eb2-sl-14c" secondAttribute="centerY" id="jEE-R8-2oE"/>
-                            <constraint firstItem="H8e-oQ-7GU" firstAttribute="bottom" secondItem="6BY-xv-Pch" secondAttribute="bottom" constant="50" id="jsQ-dm-Fz4"/>
-                            <constraint firstItem="H8e-oQ-7GU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CW2-QP-p6i" secondAttribute="trailing" id="jyI-gM-KhS"/>
-                            <constraint firstItem="6BY-xv-Pch" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="nXI-Hz-82o"/>
-                            <constraint firstItem="CW2-QP-p6i" firstAttribute="top" secondItem="8Ao-Hc-lJM" secondAttribute="bottom" constant="25" id="o2J-ov-gkI"/>
-                            <constraint firstItem="gdv-xA-oR7" firstAttribute="top" secondItem="H8e-oQ-7GU" secondAttribute="top" constant="50" id="tQt-M2-Lss"/>
-                            <constraint firstItem="ScK-So-Z7E" firstAttribute="bottom" secondItem="H8e-oQ-7GU" secondAttribute="bottom" id="trH-zP-BZU"/>
-                            <constraint firstItem="gdv-xA-oR7" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="x8E-3J-nd0"/>
+                            <constraint firstItem="ScK-So-Z7E" firstAttribute="top" secondItem="eb2-sl-14c" secondAttribute="top" id="I4z-TC-3zf"/>
+                            <constraint firstItem="ScK-So-Z7E" firstAttribute="leading" secondItem="H8e-oQ-7GU" secondAttribute="leading" id="VAZ-Gp-cE9"/>
+                            <constraint firstAttribute="trailing" secondItem="ScK-So-Z7E" secondAttribute="trailing" id="b6a-2p-hbB"/>
+                            <constraint firstItem="ScK-So-Z7E" firstAttribute="bottom" secondItem="H8e-oQ-7GU" secondAttribute="bottom" id="p1q-U9-K6c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H8e-oQ-7GU"/>
                     </view>
@@ -643,7 +641,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="compass" width="4216" height="2558"/>
-        <image name="road" width="4272" height="2848"/>
+        <image name="Map Quest-2" width="648" height="1153"/>
+        <image name="Map Quest-3" width="648" height="1153"/>
     </resources>
 </document>

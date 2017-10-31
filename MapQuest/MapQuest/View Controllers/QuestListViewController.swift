@@ -40,7 +40,7 @@ class QuestListViewController: UIViewController {
         
         questListTableView.estimatedRowHeight = 250
         questListTableView.rowHeight = UITableViewAutomaticDimension
-        questListTableView.backgroundView = UIImageView(image: UIImage(named: "grad.jpg"))
+        questListTableView.backgroundView = UIImageView(image: UIImage(named: "Map Quest-1"))
 
     }
 

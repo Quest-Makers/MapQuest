@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // theming
         
         //UIView.appearance().font = UIFont(name: <#T##String#>, size: <#T##CGFloat#>)
+        print(UIFont.familyNames)
         let qwe = UILabel.appearance()
-        qwe.font = UIFont(name: "GujaratiSangamMN", size: 18)
+        qwe.font = UIFont(name: "quest", size: 18)
         
         // initialize API Client
         MapQuestClient.initializeClient()

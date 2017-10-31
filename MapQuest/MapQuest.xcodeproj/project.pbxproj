@@ -27,6 +27,7 @@
 		45E79F2F1F92B39F007AD6DE /* QuestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F2E1F92B39F007AD6DE /* QuestListViewController.swift */; };
 		45E79F311F92B4E2007AD6DE /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F301F92B4E2007AD6DE /* Quest.swift */; };
 		45E79F341F92B555007AD6DE /* MapQuestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E79F331F92B555007AD6DE /* MapQuestClient.swift */; };
+		C13892FA1FA9168400E4F319 /* Quest.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C13892F91FA9167D00E4F319 /* Quest.ttf */; };
 		C14739831FA7CE0A00C07788 /* Explodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14739821FA7CE0900C07788 /* Explodable.swift */; };
 		CEF412D41F8EF0FD00C482DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF412D31F8EF0FD00C482DE /* AppDelegate.swift */; };
 		CEF412D91F8EF0FD00C482DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF412D71F8EF0FD00C482DE /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		45E79F331F92B555007AD6DE /* MapQuestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapQuestClient.swift; sourceTree = "<group>"; };
 		70A8A63EE59050F45042E8AF /* Pods-MapQuest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapQuest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest.debug.xcconfig"; sourceTree = "<group>"; };
 		76AD5C604864162296DF2EBD /* Pods-MapQuest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapQuest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapQuest/Pods-MapQuest.release.xcconfig"; sourceTree = "<group>"; };
+		C13892F91FA9167D00E4F319 /* Quest.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quest.ttf; sourceTree = "<group>"; };
 		C14739821FA7CE0900C07788 /* Explodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explodable.swift; sourceTree = "<group>"; };
 		CEF412D01F8EF0FD00C482DE /* MapQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF412D31F8EF0FD00C482DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,9 +142,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C13892F81FA9166B00E4F319 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C13892F91FA9167D00E4F319 /* Quest.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		CEF412C71F8EF0FD00C482DE = {
 			isa = PBXGroup;
 			children = (
+				C13892F81FA9166B00E4F319 /* fonts */,
 				CEF412D21F8EF0FD00C482DE /* MapQuest */,
 				CEF412D11F8EF0FD00C482DE /* Products */,
 				E84B6478CC553F9C51F73114 /* Pods */,
@@ -264,6 +275,7 @@
 				45CBBDC01FA1724F007FA33B /* TextClueCell.xib in Resources */,
 				45DC48471FA53D3A005A0AF5 /* PhotoHintTableViewCell.xib in Resources */,
 				45DA73881FA5621F009F3D4F /* GeoLocationTableViewCell.xib in Resources */,
+				C13892FA1FA9168400E4F319 /* Quest.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

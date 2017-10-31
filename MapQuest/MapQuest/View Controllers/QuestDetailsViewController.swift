@@ -13,6 +13,7 @@ class QuestDetailsViewController: UIViewController {
     @IBOutlet weak var questDescriptionLabel: UILabel!
     @IBOutlet weak var questStateLabel: UILabel!
     @IBOutlet weak var questNameLabel: UILabel!
+    @IBOutlet weak var startQuestButton: UIButton!
     
     var quest: Quest! {
         didSet {
@@ -26,6 +27,9 @@ class QuestDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startQuestButton.layer.cornerRadius = 10
+        startQuestButton.clipsToBounds = true
 
         // Do any additional setup after loading the view.
     }

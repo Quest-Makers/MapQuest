@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3FS-oB-wCx">
-                                <rect key="frame" x="0.0" y="44" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestListCell" rowHeight="95" id="hQw-en-3Rr" customClass="QuestTableViewCell" customModule="MapQuest" customModuleProvider="target">
@@ -226,7 +226,7 @@
                             <constraint firstItem="3FS-oB-wCx" firstAttribute="leading" secondItem="le2-1H-F3L" secondAttribute="leading" id="8Y0-3s-s1u"/>
                             <constraint firstItem="3FS-oB-wCx" firstAttribute="top" secondItem="le2-1H-F3L" secondAttribute="top" constant="-20" id="MIF-77-xmo"/>
                             <constraint firstItem="le2-1H-F3L" firstAttribute="trailing" secondItem="3FS-oB-wCx" secondAttribute="trailing" id="veS-Oe-I8s"/>
-                            <constraint firstItem="le2-1H-F3L" firstAttribute="bottom" secondItem="3FS-oB-wCx" secondAttribute="bottom" constant="20" id="z0R-8W-JNj"/>
+                            <constraint firstItem="le2-1H-F3L" firstAttribute="bottom" secondItem="3FS-oB-wCx" secondAttribute="bottom" id="z0R-8W-JNj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="le2-1H-F3L"/>
                     </view>
@@ -247,6 +247,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road" translatesAutoresizingMaskIntoConstraints="NO" id="ScK-So-Z7E">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="667"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Quest Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdv-xA-oR7">
                                 <rect key="frame" x="107" y="114" width="161" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -265,8 +268,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BY-xv-Pch">
+                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BY-xv-Pch">
                                 <rect key="frame" x="121" y="572" width="132" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Start Quest"/>
                                 <connections>
@@ -278,8 +282,11 @@
                         <constraints>
                             <constraint firstItem="8Ao-Hc-lJM" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="0Nh-lZ-Trg"/>
                             <constraint firstItem="CW2-QP-p6i" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="3PH-jo-AbH"/>
+                            <constraint firstAttribute="trailing" secondItem="ScK-So-Z7E" secondAttribute="trailing" constant="-18" id="4A4-Pd-PfJ"/>
                             <constraint firstItem="CW2-QP-p6i" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H8e-oQ-7GU" secondAttribute="leading" id="5zW-vb-hvP"/>
                             <constraint firstItem="8Ao-Hc-lJM" firstAttribute="top" secondItem="gdv-xA-oR7" secondAttribute="bottom" constant="15" id="JW1-8R-naz"/>
+                            <constraint firstItem="ScK-So-Z7E" firstAttribute="leading" secondItem="eb2-sl-14c" secondAttribute="leading" id="PHM-Zc-TzR"/>
+                            <constraint firstItem="ScK-So-Z7E" firstAttribute="top" secondItem="eb2-sl-14c" secondAttribute="top" id="U9G-Ew-UPH"/>
                             <constraint firstItem="6BY-xv-Pch" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CW2-QP-p6i" secondAttribute="bottom" constant="5" id="a1U-Ms-gsZ"/>
                             <constraint firstItem="CW2-QP-p6i" firstAttribute="centerY" secondItem="eb2-sl-14c" secondAttribute="centerY" id="jEE-R8-2oE"/>
                             <constraint firstItem="H8e-oQ-7GU" firstAttribute="bottom" secondItem="6BY-xv-Pch" secondAttribute="bottom" constant="50" id="jsQ-dm-Fz4"/>
@@ -287,6 +294,7 @@
                             <constraint firstItem="6BY-xv-Pch" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="nXI-Hz-82o"/>
                             <constraint firstItem="CW2-QP-p6i" firstAttribute="top" secondItem="8Ao-Hc-lJM" secondAttribute="bottom" constant="25" id="o2J-ov-gkI"/>
                             <constraint firstItem="gdv-xA-oR7" firstAttribute="top" secondItem="H8e-oQ-7GU" secondAttribute="top" constant="50" id="tQt-M2-Lss"/>
+                            <constraint firstItem="ScK-So-Z7E" firstAttribute="bottom" secondItem="H8e-oQ-7GU" secondAttribute="bottom" id="trH-zP-BZU"/>
                             <constraint firstItem="gdv-xA-oR7" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="x8E-3J-nd0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H8e-oQ-7GU"/>
@@ -295,6 +303,7 @@
                         <outlet property="questDescriptionLabel" destination="CW2-QP-p6i" id="3KL-Mg-Y6e"/>
                         <outlet property="questNameLabel" destination="gdv-xA-oR7" id="eZk-NP-rzh"/>
                         <outlet property="questStateLabel" destination="8Ao-Hc-lJM" id="LQ9-Ka-J9w"/>
+                        <outlet property="startQuestButton" destination="6BY-xv-Pch" id="HTW-ud-p24"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7MN-Vw-NEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -635,5 +644,6 @@
     </scenes>
     <resources>
         <image name="compass" width="4216" height="2558"/>
+        <image name="road" width="4272" height="2848"/>
     </resources>
 </document>

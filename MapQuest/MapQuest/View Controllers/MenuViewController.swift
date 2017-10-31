@@ -40,6 +40,8 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuItemsTable.backgroundView = UIImageView(image: UIImage(named: "grdfgad"))
 
         menuItemsTable.delegate = self
         menuItemsTable.dataSource = self

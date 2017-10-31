@@ -75,6 +75,8 @@ class CluePrimeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let qwe = UILabel.appearance()
+        qwe.font = UIFont(name: "quest", size: 15)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)

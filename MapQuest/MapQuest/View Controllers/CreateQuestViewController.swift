@@ -37,7 +37,7 @@ class CreateQuestViewController: UIViewController {
     
     func updateStartButton() {
         if titleTextField.text != "" && descriptionTextField.text != "" {
-            getStartedButton.backgroundColor = UIColor(red: 0.4, green: 1.0, blue: 0.2, alpha: 0.5)
+            getStartedButton.backgroundColor = UIColor(red: 0.2, green: 1.0, blue: 0.1, alpha: 0.8)
             getStartedButton.setTitleColor(UIColor.white, for: [])
         }
         else {

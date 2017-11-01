@@ -267,10 +267,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BY-xv-Pch">
-                                <rect key="frame" x="122" y="507" width="132" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BY-xv-Pch">
+                                <rect key="frame" x="88" y="507" width="200" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="MQ2-uU-pbQ"/>
+                                    <constraint firstAttribute="height" constant="45" id="asd-O6-90R"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Start Quest">
                                     <color key="titleColor" red="0.43550749027969199" green="0.0045746837819415657" blue="0.71283034154170544" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -290,7 +293,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="H8e-oQ-7GU" firstAttribute="bottom" secondItem="6BY-xv-Pch" secondAttribute="bottom" constant="115" id="4eg-qC-X0q"/>
                             <constraint firstItem="ScK-So-Z7E" firstAttribute="top" secondItem="eb2-sl-14c" secondAttribute="top" id="I4z-TC-3zf"/>
+                            <constraint firstItem="6BY-xv-Pch" firstAttribute="centerX" secondItem="eb2-sl-14c" secondAttribute="centerX" id="MqG-8T-d3M"/>
                             <constraint firstItem="ScK-So-Z7E" firstAttribute="leading" secondItem="H8e-oQ-7GU" secondAttribute="leading" id="VAZ-Gp-cE9"/>
                             <constraint firstAttribute="trailing" secondItem="ScK-So-Z7E" secondAttribute="trailing" id="b6a-2p-hbB"/>
                             <constraint firstItem="ScK-So-Z7E" firstAttribute="bottom" secondItem="H8e-oQ-7GU" secondAttribute="bottom" id="p1q-U9-K6c"/>

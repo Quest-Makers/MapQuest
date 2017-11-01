@@ -4,7 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,18 +18,30 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lB-IE-r03">
                     <rect key="frame" x="156.5" y="105" width="62" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="1dP-Q5-lvD"/>
+                        <constraint firstAttribute="height" constant="21" id="LtU-9x-yR6"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jtj-P5-dqh">
                     <rect key="frame" x="25" y="151" width="325" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="7ux-43-K4q"/>
+                        <constraint firstAttribute="width" constant="325" id="gv0-YH-MT8"/>
+                    </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-Pi-PEQ">
-                    <rect key="frame" x="15" y="25" width="75" height="30"/>
+                    <rect key="frame" x="57.5" y="25" width="75" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="2ZV-UW-bBc"/>
+                        <constraint firstAttribute="width" constant="75" id="cey-Tg-3fR"/>
+                    </constraints>
                     <state key="normal" title="+ Text Hint"/>
                     <connections>
                         <action selector="addTextHint:" destination="iN0-l3-epB" eventType="touchUpInside" id="UDZ-V5-XpR"/>
@@ -36,27 +49,43 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vd-zm-oeM">
                     <rect key="frame" x="144.5" y="25" width="86" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="86" id="Z32-fb-Vs1"/>
+                        <constraint firstAttribute="height" constant="30" id="rHG-tX-XLb"/>
+                    </constraints>
                     <state key="normal" title="+ Photo Hint"/>
                     <connections>
                         <action selector="addPhotoHint:" destination="iN0-l3-epB" eventType="touchUpInside" id="T32-G3-sYx"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPg-1J-wQd">
-                    <rect key="frame" x="286" y="25" width="74" height="30"/>
+                    <rect key="frame" x="242.5" y="25" width="74" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="5n0-Y6-cMg"/>
+                        <constraint firstAttribute="height" constant="30" id="xfJ-mw-ybU"/>
+                    </constraints>
                     <state key="normal" title="+ Geo Hint"/>
                     <connections>
                         <action selector="addGeoHint:" destination="iN0-l3-epB" eventType="touchUpInside" id="5iS-Lp-W41"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-Lv-BBP">
-                    <rect key="frame" x="15" y="203" width="122" height="30"/>
+                    <rect key="frame" x="25" y="203" width="122" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="122" id="t1M-3L-QkR"/>
+                        <constraint firstAttribute="height" constant="30" id="z3D-ab-Aru"/>
+                    </constraints>
                     <state key="normal" title="Add Another Clue"/>
                     <connections>
                         <action selector="addClue:" destination="iN0-l3-epB" eventType="touchUpInside" id="Icf-RK-dwL"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSo-PJ-iSR">
-                    <rect key="frame" x="323" y="203" width="37" height="30"/>
+                    <rect key="frame" x="313" y="203" width="37" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="37" id="5sw-kZ-5Kv"/>
+                        <constraint firstAttribute="height" constant="30" id="suw-n2-Zje"/>
+                    </constraints>
                     <state key="normal" title="Done"/>
                     <connections>
                         <action selector="finalize:" destination="iN0-l3-epB" eventType="touchUpInside" id="nC9-r9-oAv"/>
@@ -64,24 +93,23 @@
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="jtj-P5-dqh" firstAttribute="top" secondItem="4lB-IE-r03" secondAttribute="bottom" constant="25" id="864-Je-jYV"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JSo-PJ-iSR" secondAttribute="trailing" constant="15" id="9F5-ar-Eh6"/>
+                <constraint firstItem="4lB-IE-r03" firstAttribute="top" secondItem="7Vd-zm-oeM" secondAttribute="bottom" constant="50" id="0pv-xU-Qpm"/>
+                <constraint firstItem="CNO-Pi-PEQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="3mM-7U-ere"/>
+                <constraint firstItem="Bb9-Lv-BBP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="3pT-Zx-twt"/>
+                <constraint firstItem="7Vd-zm-oeM" firstAttribute="centerY" secondItem="CNO-Pi-PEQ" secondAttribute="centerY" id="4In-Uc-CqA"/>
+                <constraint firstItem="7Vd-zm-oeM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8oW-gL-YGQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jtj-P5-dqh" secondAttribute="trailing" constant="25" id="BSU-Yg-sTn"/>
-                <constraint firstItem="4lB-IE-r03" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CJp-fV-QVc"/>
-                <constraint firstItem="CNO-Pi-PEQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Dfo-0s-00d"/>
-                <constraint firstItem="7Vd-zm-oeM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CNO-Pi-PEQ" secondAttribute="trailing" constant="50" id="JIl-aN-QMI"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wPg-1J-wQd" secondAttribute="trailing" constant="15" id="Kgt-ng-3KA"/>
-                <constraint firstItem="7Vd-zm-oeM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Npu-Od-tJX"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JSo-PJ-iSR" secondAttribute="bottom" constant="25" id="Ow7-RK-czv"/>
+                <constraint firstItem="7Vd-zm-oeM" firstAttribute="leading" secondItem="CNO-Pi-PEQ" secondAttribute="trailing" constant="12" id="DBa-66-aBC"/>
+                <constraint firstItem="wPg-1J-wQd" firstAttribute="centerY" secondItem="CNO-Pi-PEQ" secondAttribute="centerY" id="FQF-ir-pUQ"/>
                 <constraint firstItem="jtj-P5-dqh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="S39-P1-LKP"/>
-                <constraint firstItem="CNO-Pi-PEQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="T8H-jt-bTc"/>
-                <constraint firstItem="4lB-IE-r03" firstAttribute="top" secondItem="7Vd-zm-oeM" secondAttribute="bottom" constant="50" id="TAF-9E-Mx1"/>
-                <constraint firstItem="wPg-1J-wQd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Vd-zm-oeM" secondAttribute="trailing" constant="50" id="UwN-uj-ZCk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JSo-PJ-iSR" secondAttribute="trailing" constant="25" id="T78-vg-qqp"/>
+                <constraint firstItem="Bb9-Lv-BBP" firstAttribute="top" secondItem="jtj-P5-dqh" secondAttribute="bottom" constant="22" id="VCb-75-FSU"/>
                 <constraint firstItem="jtj-P5-dqh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="W4c-Yf-iyZ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Bb9-Lv-BBP" secondAttribute="bottom" constant="25" id="j9b-mz-KGh"/>
-                <constraint firstItem="7Vd-zm-oeM" firstAttribute="baseline" secondItem="CNO-Pi-PEQ" secondAttribute="baseline" id="jFG-l9-jV2"/>
-                <constraint firstItem="wPg-1J-wQd" firstAttribute="baseline" secondItem="CNO-Pi-PEQ" secondAttribute="baseline" id="sfU-4I-tNg"/>
-                <constraint firstItem="Bb9-Lv-BBP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="xNz-z1-1dM"/>
+                <constraint firstItem="jtj-P5-dqh" firstAttribute="top" secondItem="4lB-IE-r03" secondAttribute="bottom" constant="25" id="a7E-B3-yqP"/>
+                <constraint firstItem="wPg-1J-wQd" firstAttribute="leading" secondItem="7Vd-zm-oeM" secondAttribute="trailing" constant="12" id="cez-Ff-jM3"/>
+                <constraint firstItem="4lB-IE-r03" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="efZ-T7-rhW"/>
+                <constraint firstItem="JSo-PJ-iSR" firstAttribute="top" secondItem="jtj-P5-dqh" secondAttribute="bottom" constant="22" id="hQp-6f-lyT"/>
+                <constraint firstItem="jtj-P5-dqh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="r5S-h1-EeL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

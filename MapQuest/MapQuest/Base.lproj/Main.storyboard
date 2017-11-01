@@ -455,13 +455,29 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="l7I-5D-yPv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhe-xU-Dcz">
+                                <rect key="frame" x="22" y="617" width="60" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.6520488606" blue="0.2326452577" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Xez-tH-2CX"/>
+                                    <constraint firstAttribute="height" constant="30" id="deW-kh-UJj"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.96375080960000004" green="0.96375080960000004" blue="0.96375080960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissAction:" destination="tpR-9x-Eva" eventType="touchUpInside" id="AqS-kb-QvE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="l7I-5D-yPv" firstAttribute="trailing" secondItem="Ltb-QO-MPc" secondAttribute="trailing" id="1QX-J9-bza"/>
                             <constraint firstItem="l7I-5D-yPv" firstAttribute="leading" secondItem="Ltb-QO-MPc" secondAttribute="leading" id="7aX-5l-oaQ"/>
                             <constraint firstItem="l7I-5D-yPv" firstAttribute="bottom" secondItem="Ltb-QO-MPc" secondAttribute="bottom" id="KzM-SZ-mxP"/>
+                            <constraint firstItem="Nhe-xU-Dcz" firstAttribute="leading" secondItem="Ltb-QO-MPc" secondAttribute="leading" constant="22" id="VhK-gq-T3H"/>
                             <constraint firstItem="l7I-5D-yPv" firstAttribute="top" secondItem="vdK-eD-Xrq" secondAttribute="top" id="r3K-y2-mRl"/>
+                            <constraint firstItem="Ltb-QO-MPc" firstAttribute="bottom" secondItem="Nhe-xU-Dcz" secondAttribute="bottom" constant="20" id="ylJ-Pc-Mjc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ltb-QO-MPc"/>
                     </view>
@@ -471,7 +487,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ss2-sP-m8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4832.8000000000002" y="1232.8335832083958"/>
+            <point key="canvasLocation" x="4832.8000000000002" y="1231.9340329835084"/>
         </scene>
         <!--Burger View Controller-->
         <scene sceneID="2os-3f-WIz">

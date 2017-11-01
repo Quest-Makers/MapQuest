@@ -12,6 +12,10 @@ class PlayClueCell: UITableViewCell {
 
     @IBOutlet weak var clueLabel: UILabel!
     @IBOutlet weak var clueImage: UIImageView!
+    
+    var delegate: PlayClueViewController?
+    var hint: Hint?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,5 +26,10 @@ class PlayClueCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBAction func showMapAction(_ sender: Any) {
+        self.delegate!.performSegue(withIdentifier: "showMapSegue", sender: self)
+    }
 
+    
+    
 }

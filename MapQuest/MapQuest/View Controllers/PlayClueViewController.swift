@@ -55,6 +55,7 @@ class PlayClueViewController: UIViewController, Explodable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         tableView.mapQuestRegisterNib(cellClass: TextClueCell.self)
         tableView.mapQuestRegisterNib(cellClass: PhotoHintTableViewCell.self)
@@ -97,16 +98,14 @@ class PlayClueViewController: UIViewController, Explodable {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let identifier = segue.identifier as String! ?? ""
+        if identifier == "showMapSegue" {
+            let destination = segue.destination as! ShowMapViewController
+            let cell = sender as! PlayClueCell
+            destination.hint = cell.hint
+        }
     }
-    */
 
 }
 
@@ -134,8 +133,13 @@ extension PlayClueViewController: UITableViewDataSource {
         }
         
         if hint?.hintType == HintType.GEOLOCATION {
-            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: GeoLocationTableViewCell.self) as! GeoLocationTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "playCell", for: indexPath) as! PlayClueCell
+            cell.delegate = self
             cell.hint = hint
+            
+            
+//            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: GeoLocationTableViewCell.self) as! GeoLocationTableViewCell
+//            cell.hint = hint
             return cell
         }
         

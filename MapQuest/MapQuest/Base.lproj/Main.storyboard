@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -386,6 +387,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iG-FK-cGf">
+                                                    <rect key="frame" x="164" y="6" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="showMapAction:" destination="Fmd-aW-GEM" eventType="touchUpInside" id="2Mj-rt-c9y"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="3Tc-eZ-KNc" firstAttribute="centerY" secondItem="yFm-QS-6xy" secondAttribute="centerY" id="0PZ-oJ-ae5"/>
@@ -428,11 +437,41 @@
                         <outlet property="photoView" destination="PTq-Xb-XJ3" id="XqS-7t-hXw"/>
                         <outlet property="solveButton" destination="KVK-Bq-B5Z" id="Spi-WH-DZU"/>
                         <outlet property="tableView" destination="PfY-Qk-WeA" id="W03-ne-aJD"/>
+                        <segue destination="tpR-9x-Eva" kind="presentation" identifier="showMapSegue" id="Oel-xU-HOI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjn-XG-bQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4832.8000000000002" y="437.63118440779613"/>
+        </scene>
+        <!--Show Map View Controller-->
+        <scene sceneID="aGE-v6-xJs">
+            <objects>
+                <viewController id="tpR-9x-Eva" customClass="ShowMapViewController" customModule="MapQuest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vdK-eD-Xrq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="l7I-5D-yPv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l7I-5D-yPv" firstAttribute="trailing" secondItem="Ltb-QO-MPc" secondAttribute="trailing" id="1QX-J9-bza"/>
+                            <constraint firstItem="l7I-5D-yPv" firstAttribute="leading" secondItem="Ltb-QO-MPc" secondAttribute="leading" id="7aX-5l-oaQ"/>
+                            <constraint firstItem="l7I-5D-yPv" firstAttribute="bottom" secondItem="Ltb-QO-MPc" secondAttribute="bottom" id="KzM-SZ-mxP"/>
+                            <constraint firstItem="l7I-5D-yPv" firstAttribute="top" secondItem="vdK-eD-Xrq" secondAttribute="top" id="r3K-y2-mRl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ltb-QO-MPc"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="l7I-5D-yPv" id="o5o-lF-DQF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ss2-sP-m8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4832.8000000000002" y="1232.8335832083958"/>
         </scene>
         <!--Burger View Controller-->
         <scene sceneID="2os-3f-WIz">

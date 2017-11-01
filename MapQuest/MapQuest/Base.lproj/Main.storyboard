@@ -387,10 +387,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iG-FK-cGf">
-                                                    <rect key="frame" x="164" y="6" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iG-FK-cGf">
+                                                    <rect key="frame" x="130" y="6" width="115" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.6520488606" blue="0.2326452577" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="115" id="TdT-Xp-4dM"/>
+                                                        <constraint firstAttribute="height" constant="30" id="cCN-Mx-rcV"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Show Map Hint">
+                                                        <color key="titleColor" red="0.96462007729999999" green="1" blue="0.96668821449999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="showMapAction:" destination="Fmd-aW-GEM" eventType="touchUpInside" id="2Mj-rt-c9y"/>
                                                     </connections>
@@ -399,11 +405,14 @@
                                             <constraints>
                                                 <constraint firstItem="3Tc-eZ-KNc" firstAttribute="centerY" secondItem="yFm-QS-6xy" secondAttribute="centerY" id="0PZ-oJ-ae5"/>
                                                 <constraint firstAttribute="trailing" secondItem="3Tc-eZ-KNc" secondAttribute="trailing" constant="8" id="KgS-BI-tNi"/>
+                                                <constraint firstItem="6iG-FK-cGf" firstAttribute="centerY" secondItem="yFm-QS-6xy" secondAttribute="centerY" id="cvg-fV-vxs"/>
                                                 <constraint firstItem="3Tc-eZ-KNc" firstAttribute="leading" secondItem="yFm-QS-6xy" secondAttribute="leading" constant="8" id="gkc-yt-NQZ"/>
+                                                <constraint firstItem="6iG-FK-cGf" firstAttribute="centerX" secondItem="yFm-QS-6xy" secondAttribute="centerX" id="vDf-fB-YPq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="clueLabel" destination="3Tc-eZ-KNc" id="zaK-PR-G04"/>
+                                            <outlet property="mapButton" destination="6iG-FK-cGf" id="abE-uc-jik"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -117,6 +117,8 @@ extension PlayClueViewController: UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "playCell", for: indexPath) as! PlayClueCell
             cell.clueLabel.text = hint?.text
+            cell.mapButton.isHidden = true
+            cell.clueLabel.isHidden = false
             
 //            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: TextClueCell.self) as! TextClueCell
 //            cell.hint = hint
@@ -136,6 +138,8 @@ extension PlayClueViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "playCell", for: indexPath) as! PlayClueCell
             cell.delegate = self
             cell.hint = hint
+            cell.clueLabel.isHidden = true
+            cell.mapButton.isHidden = false
             
             
 //            let cell = tableView.mapQuestDequeueReusableCellClass(cellClass: GeoLocationTableViewCell.self) as! GeoLocationTableViewCell

@@ -12,6 +12,7 @@ class PlayClueCell: UITableViewCell {
 
     @IBOutlet weak var clueLabel: UILabel!
     @IBOutlet weak var clueImage: UIImageView!
+    @IBOutlet weak var mapButton: UIButton!
     
     var delegate: PlayClueViewController?
     var hint: Hint?

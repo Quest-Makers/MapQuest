@@ -16,7 +16,7 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 - [x] When creating new clues, creator can add text, images, and location
-- [ ] Can choose location from mapview
+- [x] Can choose location from mapview
 - [x] Can use curent gps location to set location for a clue
 - [x] Can get list of hunts created by other users and play them
 - [ ] Geofencing: solve clues by carrying device to physical location
@@ -31,7 +31,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 
-<img src='https://github.com/Quest-Makers/MapQuest/blob/master/mapb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/Quest-Makers/MapQuest/blob/master/mapq.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
